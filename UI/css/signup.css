@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+	--primary: rgb(12, 151, 70);
+	--dark: #ECF0F1;
+	--light: white;
+  }
+
+body{
+	font-family: Calibri ;
+	background-color: var(--light);
+}
+h3{
+	text-align: left;
+   	padding-left: 40px;
+	padding: 20px;
+	background-color: var(--primary);
+	height: 80px;
+	color: white;
+}
+.form{
+	text-align: left;
+    padding-left: 40px;
+    padding: 20px;
+
+}
+.fillbox{
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 2.5px;
+	background-color: white;
+	width: 200px;
+	height: 30px;
+}
+
+.fillbox:hover{
+	 padding: 3px;
+     border: 2px solid black;
+}
+/* .gender{
+
+} */
+#birthday {
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 10px;
+	background-color: white;
+	width: 155px;
+	height: 30%;
+}
+
+
+.terms a{
+	text-decoration: blue;
+	
+ }
+
+.submitt {
+    padding: 12px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+    cursor: pointer;
+    color: black;
+    display: inline;
+}
+.submitt:hover{
+	padding: 14px;
+    background-color: green;
+    color: white;
+   
+}
+
+.biography{
+	border: 1px solid grey;
+	border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+	width: 50%;
+	height: 100px;
+    word-break: break-all;
+
+}
+a{
+	color: black;
+	text-decoration: none;
+}
