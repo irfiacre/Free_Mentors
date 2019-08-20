@@ -1,0 +1,451 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--primary: rgb(12, 151, 70);
+	--dark: #ECF0F1;
+	--light: white;
+  }
+  html {
+	  box-sizing: border-box;
+	  font-family:  Calibri; 
+  }
+	
+	body{
+		font-family: calibri;
+		background-color: #f1f1f1;
+		padding: 20px;
+	}
+	a{
+		color: black;
+		text-decoration: none;
+	}
+	
+  img {
+	max-width: 100%;
+  }
+  h4{
+	color: black;
+	border-bottom: 2px solid var(--dark);
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+  .admin_container{
+	display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70px;
+    background-color: var(--primary);
+    /* border: 1px solid var(--light); */
+  }
+  .nav-links{
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+  }
+
+  .nav-links a {
+      letter-spacing: 3px;
+  }
+  .nav-links li{
+      list-style: none;
+  }
+
+  #uplogo{
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 10px;
+  }
+  
+  #profilepic{
+	width: 35px;
+	height: 35px; 
+    border: 2px solid var(--light);
+    border-radius: 50%;
+  }
+
+  .admin_body{
+
+	display: grid;
+	grid-gap: 10px;
+	grid-template-areas: 
+   'adminprofile information information information information'
+   'mentors_users mentors_users mentors_users mentors_users mentors_users';
+   
+  }
+  
+
+.adminprofile{
+	grid-area: adminprofile;
+	/* position: fixed; */
+	color: black;
+	padding: 2px;
+	background-color: var(--light);
+	/* width: 225px; */
+	/* height: 500px; */
+	/* margin-left: 5px; */
+	border-radius: 5px;
+	line-height: 1.5;
+	width: 80%;
+    
+
+}
+
+#admin_profile{
+
+	border: 2px solid var(--dark);
+	border-radius: 10%;
+	width: 100%;
+	align-content: center;
+
+}
+.admin_info {
+	margin-top: 10px;
+}
+
+
+
+.information{
+	   /* width: 1000px; */
+	   grid-area: information;
+	   color: black;
+	   /* margin-top: 100px; */
+	   border-radius: 5px;
+	   background-color: var(--light);
+	   width: 100%;
+	   /* height: 800px; */
+	   padding: 3px;
+	   border-radius: 5px;
+}
+
+
+#analytics{
+	border: 1px solid var(--dark);
+	border-radius: 2px;
+}
+.analytic{
+	text-align: center;
+}
+
+.mentors_users{
+     grid-area: mentors_users;
+	/* display: block; */
+    /* margin-left: 250px; */
+ 	background-color: var(--light);
+ 	border-radius: 5px;
+ 	color: black; 
+
+}
+ table{
+	width: 100%;
+}
+
+ .mentors_users img {
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--dark);
+	border-radius: 3px;
+ }
+
+ .users1 img{
+	 width: 100%;
+ }
+
+ .info{
+	width: 90%;
+	/* height: 70px; */
+	/* padding: 5px; */
+	border: 1px solid var(--dark);
+	border-radius: 2px;
+}
+
+/* BUTTONS AND POPUP */
+.buttons{
+	float: right;
+}
+.buttons2{
+	float: right;
+}
+
+
+#users{
+    padding: 12px;
+	border: 2px solid var(--dark);
+	border-radius: 5px;
+	background-color: var(--light);
+    cursor: pointer;
+    color: black;
+    /* display: inline; */
+    
+}
+#users:hover{
+	padding: 14px;
+    background-color:  rgb(132, 157, 160);
+    color: var(--light);
+}
+
+.student{
+    padding: 12px;
+	border: 2px solid var(--dark);
+	border-radius: 5px;
+	background-color: var(--primary);
+    cursor: pointer;
+    color: var(--light);
+    /* display: inline; */
+	
+	
+}
+.student:hover{
+	padding: 14px;
+    background-color: var(--light);
+    color: black;
+}
+
+.mentors1{
+    padding: 12px;
+	border: 2px solid var(--dark);
+	border-radius: 5px;
+	background-color: var(--primary) ;
+    cursor: pointer;
+    color: var(--light);
+    display: inline;
+   
+}
+.student1{
+    padding: 12px;
+	border: 2px solid var(--dark);
+	border-radius: 5px;
+	background-color: var(--light);
+    cursor: pointer;
+    color: black;
+    display: inline;
+    
+}
+.student1:hover{
+
+	padding: 14px;
+    background-color: rgb(132, 157, 160);
+    color: black;
+}
+
+
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--light);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  font-size: 14px;
+  line-height: 0.5;
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  height: 100px;
+  background-color: var(--primary);
+  color: white;
+}
+
+.modal-body {
+    margin-left: 100px;
+}
+
+.modal-body p {
+	margin-left: 0px;
+   
+}
+
+#textboxs{
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: white;
+    width: 200px;
+    height: 35px;
+}
+#textboxs:hover{
+     padding: 3px;
+     border: 2px solid grey;
+}
+#buttons {
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+#buttons:hover{
+    padding: 14px;
+    background-color: var(--primary);
+    color: white;
+   
+}
+/* @media(max-width: ){
+	kkkkkkkk
+} */
+
+
+
+@media(max-width: 600px){
+
+
+	.admin_body{
+
+		display: grid;
+		grid-gap: 10px;
+		grid-template-areas: 
+		 'adminprofile'
+		 'information'
+     'mentors_users';
+     
+	}
+	
+
+    #uplogo{
+      border-radius: 1px;
+      width: 50px;
+    }
+    
+    #profilepic{
+      width: 35px;
+      height: 35px;
+	} 
+
+	.adminprofile {
+		width: 100%;
+	}
+	
+		
+	#admin_profile{
+		margin-top: 10px;
+		width: 60%;
+		margin-left: 40px;
+		align-content: center;
+		}
+
+	.admin_info{
+		margin-top: -10px;
+		line-height: 2;
+		text-align: center;
+	}
+	.mentors_users img {
+		    /* margin-top: -300px; */
+			width: 100%;
+			height: auto;
+			border: 1px solid var(--dark);
+			border-radius: 3px;
+			
+		 }
+		
+		 .users1 img{
+			 width: 100%;
+		 }
+		
+		 .info{
+			width: 60%;
+			/* height: 70px; */
+			/* padding: 5px; */
+			border: 1px solid var(--dark);
+			border-radius: 2px;
+		}
+	
+
+	@media(max-width: 450px){
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--light);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  font-size: 14px;
+  line-height: 0.5;
+  width: 80%;
+  height: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.modal-header {
+  padding: 5px 16px;
+  height: 100px;
+  background-color: var(--primary);
+  color: white;
+  line-height: 1;
+}
+
+.modal-body {
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+.modal-body p {
+	margin-left: 0px;
+   
+}
+
+}
