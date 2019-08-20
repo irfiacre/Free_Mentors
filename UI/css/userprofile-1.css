@@ -1,0 +1,429 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: rgb(12, 151, 70);
+  --dark: #ECF0F1;
+  --light: white;
+}
+
+  body{
+      font-family: calibri;
+      background-color: #f1f1f1;
+      padding: 20px;
+  }
+  a{
+      color: white;
+      text-decoration: none;
+  }
+  h4{
+    color: black;
+    border-bottom: 2px solid lightgrey;
+    padding: 2px;
+}
+
+h5{
+  color: black;
+}
+
+p{
+  color:black;
+}
+
+  
+img {
+  max-width: 100%;
+}
+
+.user_container{
+
+	display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+
+}
+/*
+.header1{
+   position: fixed; 
+  margin-top: -30px;
+  margin-left: -30px;
+  border-bottom: 2px solid var(--light);
+  max-height: 90px; 
+   width: 100%; 
+  background-color: var(--primary);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2,1fr);
+
+}
+
+.menu ul {
+  display: grid;
+  grid-gap: 10px;
+  padding: 3px;
+  list-style: none;
+  grid-template-columns: repeat(4,1fr); 
+
+}
+
+.menu a {
+  display: block;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+
+}
+
+ul{
+margin-top: 30px;
+text-decoration: none;
+
+}
+ul li{
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+ul li a:hover{
+  opacity: 0.6;
+ 
+}*/
+
+
+  nav {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 70px;
+    background-color: var(--primary);
+    /* border: 1px solid var(--light); */
+  }
+  .nav-links{
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+  }
+
+  .nav-links a {
+      letter-spacing: 3px;
+  }
+  .nav-links li{
+      list-style: none;
+  }
+
+  
+  .burger div{
+    width: 25px;
+    height: 2px;
+    background-color: var(--light);
+    margin: 5px;
+  }
+  .burger{
+    display: none;
+  }
+
+
+
+
+#profilepic{
+  border: 2px solid white;
+  border-radius: 50%;
+}
+#uplogo{
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.user{
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'myprofile information';
+
+}
+
+  
+  .myprofile{
+      /* position: fixed; */
+      color: black;
+      padding: 10px;
+      background-color: white;
+      /* width: 230px;
+      height: 500px; */
+      /* margin-top: 50px; */
+      /* margin-left: 10px; */
+      border-radius: 5px;
+      /* font-size: 14px; */
+      line-height: 2;
+  
+  }
+
+  #edit {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary);
+      cursor: pointer;
+    color: var(--light);
+    /* height: 90px; */
+    /* width: 50%; */
+   }
+   #edit:hover {
+    padding: 14px;
+      background-color: green;
+      color: var(--light);
+  }
+  
+  #userprofile{
+      margin-top: 10px;
+      margin-left: 20px;
+      border: 2px solid lightgrey;
+      border-radius: 50%;
+      width: 80%;
+      /* height: auto; */
+  }
+  
+
+  .information{
+         color: black;
+         /* margin-left: 300px;
+         margin-top: 70px;
+         width: 800px;
+         height: 600px; */
+         border-radius: 5px;
+         background-color: white;
+         padding: 10px;
+  }
+  
+   .mentors{
+       /* margin-left: 300px; */
+       border-radius: 5px;
+       background-color: rgba(0, 0, 0, 0.068);
+       color: black; 
+       /* width: 800px; */
+       /* height: 1000px; */
+       padding: 3px;
+       
+   }
+
+   
+   .main {
+    /* max-width: 1000px;
+    margin: auto; */
+    
+  }
+  .row {
+    /* margin: 10px -16px; */
+  }
+  
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  
+  .column {
+    float: left;
+    width: 30%;
+    display: none; 
+  }
+  
+   
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .content {
+    background-color: white;
+    padding: 10px;
+    /* margin-left: 50px; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  
+  .show {
+
+      display: block;
+      /* grid-gap: 10px;
+      grid-template-areas: 
+         'content content'
+         'content content'; */
+    }
+  
+  
+  .btn {
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  #myBtnContainer {
+    margin-left: 30px;
+  }
+
+  /* .sessions{
+    margin-left: 300px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #ECF0F1;
+    color: black; 
+    width: 800px;
+    height: 200px;
+    padding: 3px;
+    background-color: white;
+    padding: 10px;
+} */
+
+  @media(max-width: 800px) {
+      
+    body {
+    /* overflow-x: hidden;
+    font-size: 14px; */
+  }
+
+
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    height: 20vh;
+    top: 18.5vh;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 20%;
+    margin-right: 20px;
+    transform: translateX(130%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .burger{
+    display: block;
+    cursor: pointer;
+  }
+
+
+
+    #userprofile{
+      margin-left: 50px;
+      width: 50%;
+      /* height: 60px; */
+    }
+    .user {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-areas: 
+      'myprofile'
+      'information'
+      'mentors'
+
+    }
+    
+    .mentors {
+    
+    font-size: 12px; 
+    background-color: var(--dark);
+    }
+  
+    
+    .btn{
+    
+      font-size: 8px;
+    
+     }
+
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  
+  .column {
+    float: left;
+    width: 100%;
+    display: none; 
+  }
+  
+   
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .content {
+    background-color: white;
+    padding: 10px;
+   
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  
+  .show {
+
+      display: block;
+     
+    }
+  
+  
+  .btn {
+   
+    border: none;
+    outline: none;
+    
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  #myBtnContainer {
+    margin-left: 30px;
+  }
+
+
+  }
+ 
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
