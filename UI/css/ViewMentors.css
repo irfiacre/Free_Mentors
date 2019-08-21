@@ -32,92 +32,35 @@ a {
 img {
     max-width: 100%;
 }
+
+footer{
+    display: block;
+    text-align: center;
+    line-height: 1.6;
+    background-color: var(--primary);
+    bottom: 0;
+}
+
 .container {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr;
 }
 
-.header1{
-    /* position: fixed;
-    margin-top: -10px;
-    margin-left: -10px; */
-    /* border-bottom: 2px solid var(--light);
-    max-height: 90px;
-    width: 100%;
-    background-color: var(--primary);
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2,1fr); */
-    }
-
-/* 
-.menu ul {
-    display: grid;
-    grid-gap: 10px;
-    padding: 3px;
-    list-style: none;
-    grid-template-columns: repeat(4,1fr); 
-
-}
-
-.menu a {
-    display: block;
-    padding: 5px;
-    text-align: center;
-    font-size: 12px;
-
-}
-
-.menu .menu2{
-    display: none;
-}
-
-
-ul{
-	margin-top: 30px;
-	text-decoration: none;
-
-}
-ul li{
-    line-height: 1; 
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: none;
-}
-
-ul li a:hover{
-    opacity: 0.6;
-   
-} */
-/* ul li ul li{
-	display: none;
-	text-align: left;
-}
-ul li:hover ul li{
-    display: block;
-    background-color: white;
-}
-
-ul li ul li a {
-	color: black;
-} */
-
-/* new nav */
-
 
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    
     min-height: 70px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     background-color: var(--primary);
-    /* border: 1px solid var(--light); */
+    
   }
   .nav-links{
+      margin-top: 40px;
       display: flex;
       justify-content: space-around;
-      width: 50%;
+      width: 100%;
   }
 
   .nav-links a {
@@ -147,7 +90,7 @@ nav {
 #uplogo{
     border-radius: 5px;
     margin-top: 30px;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 #profilepic{
@@ -159,7 +102,7 @@ nav {
     /* margin-top: 10px; */
     border-radius: 2px;
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-areas: 
     'activities mentors mentors mentors mentors mentors others';
 }
@@ -191,26 +134,16 @@ nav {
     /* margin-left: 300px;
     margin-top: 90px; */
     background-color: var(--light);
-    /* width: 700px; */
+ 
     border-radius: 2px;
     display: grid;
     grid-template-areas: 
     ' mentor mentor';
 }
-/* .mentor #mentor3 {
-    background-image: url(/img/mentor\ \(3\).jpg);
-    background-size: cover;
-    background-position: center;
-} */
 
 
 .mentor {
     display: grid;
-    /* width: 250px; */
-    /* margin-left: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px; */
     margin: 10px;
     padding: 10px;
     border-bottom: 2px solid var(--dark);
@@ -249,79 +182,51 @@ nav {
 
 
 @media(max-width: 600px) {
-    body {
-		overflow-x: hidden;
-	}
 
-	/* .header1 {
-		display: grid;
-		grid-template-areas: auto;
-	} */
-
-	.nav-links {
-		position: fixed;
+    .container {
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: 1fr;
+    }
+    
+ 
+    .nav-links {
+        /* position: fixed; */
+        position: fixed;
 		right: 0px;
 		height: 20vh;
-		top: 15.5vh;
-        /* border: 1px solid white; */
+		top: 7.5vh;
         background-color: var(--primary);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		width: 30%;
-        height: 20%;
+        height: 30%;
+        border-bottom: 1px solid white;
 		transform: translateX(130%);
 		transition: transform 0.5s ease-in;
 	}
-	.nav-links li{
-		/* opacity: 0; */
-	}
+
 
 	.burger{
+        margin-top: 40px;
+        margin-left: 90px;
 		display: block;
 		cursor: pointer;
-	}
-
-
-
-    /* .header1{
-
-        display: grid;
-        font-size: 8px;
-        grid-gap: 10px;
-        width: 570px;
-        height: 80px;
-
     }
-    .menu {
-        display: grid;
-        grid-gap: 10px;
-        
+    
+    #uplogo{
+        border-radius: 5px;
+        margin-top: 30px;
+        margin-left: 3px;
     }
-    ul {
-        margin-top: 20px;
-      
-       
-    }
-    .menu .menu1{
-        display: none;
-    }
-    .menu .menu2{
-        display: inline;
-        color: black;
-    }
+    
 
-    .menu #profilepic {
-      width: 10px;
-      height: 10px;
-    }
-     */
 
     .viewmentors {
-        /* margin-top: 10px; */
         border-radius: 2px;
         display: grid;
-        grid-gap: 20px;
+        grid-gap: 5px;
         grid-template-areas: 
         'activities mentors mentors mentors '
         'others mentors mentors mentors';
@@ -329,43 +234,37 @@ nav {
     }
     
     .activities{
-        /* position: absolute; */
+        
         padding: 10px;
-        /* width: 200px; */
-        /* max-height: 500px; */
+       
        
     }
     .mentors{
-        /* margin-left: 220px; */
-        /* width: 330px; */
+    
         display: grid;
         grid-gap: 10px;
         grid-template-areas: 
         'mentor'
-        /* grid-template-columns: 1fr; */
-        
+       
 
     }
 
     .mentor {
-       /* width: 290px; */
+     
        font-size: 16px;
        padding: 5px;
-       /* margin-left: 15px; */
+       
        
 
     }
     .others {
-         /* margin-left: -568px; */
-         /* margin-top: -750px; */
+    
          border-radius: 2px;
          display: grid;
-         /* grid-gap: 10px; */
-         /* width: 220px; */
-       
+         
     }
     .others1 {
-        /* width: 200px; */
+       
         font-size: 16px;
         font-style: italic;
         padding: 5px;
