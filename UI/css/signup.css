@@ -1,38 +1,82 @@
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+a{
+	color: white;
+	text-decoration: none;
+}
+
 :root {
 	--primary: rgb(12, 151, 70);
 	--dark: #ECF0F1;
-	--light: white;
+	--light: rgb(228, 225, 225);
+  }
+  html {
+   box-sizing: border-box;
+   font-family:  Calibri; 
   }
 
-body{
-	font-family: Calibri ;
-	background-color: var(--light);
+  footer{
+    display: block;
+    text-align: center;
+    line-height: 1.6;
+    background-color: var(--primary);
+    bottom: 0;
 }
+  
 h3{
-	text-align: left;
-   	padding-left: 40px;
 	padding: 20px;
 	background-color: var(--primary);
 	height: 80px;
 	color: white;
+	width: 100%;
 }
-.form{
-	text-align: left;
-    padding-left: 40px;
-    padding: 20px;
+
+.signUpContainer{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr;
+	align-items: center;
 
 }
+
+.form{
+	padding-left:20px;
+	align-items: center;
+}
+
+.profile{ 
+	grid-area: profile;
+	padding: 10px;
+	width: 100%;
+}
+
+.address{
+	grid-area: address;
+	padding: 10px;
+	width: 100%;
+}
+.Bio{
+	padding: 10px;
+	width: 100%
+}
+
+.credentials{
+	padding: 10px;
+	width: 100%;
+}
+
+
+
 .fillbox{
 	border: 1px solid grey;
 	border-radius: 3px;
-	padding: 2.5px;
+	padding: 15px;
 	background-color: white;
-	width: 200px;
+	width: 30%;
 	height: 30px;
 }
 
@@ -48,7 +92,7 @@ h3{
 	border-radius: 3px;
 	padding: 10px;
 	background-color: white;
-	width: 155px;
+	/* width: 155px; */
 	height: 30%;
 }
 
@@ -88,4 +132,102 @@ h3{
 a{
 	color: black;
 	text-decoration: none;
+}
+
+@media(max-width: 400px){
+	
+.signUpContainer{
+	width: 100%;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: 1fr;
+	align-items: center;
+	line-height: 1.3;
+
+}
+
+.form{
+	/* display: grid;
+	grid-gap: 10px;
+    grid-template-areas: 
+     'profile address'; */
+	padding-left:20px;
+	align-items: center;
+}
+
+.profile{ 
+	grid-area: profile;
+	padding: 10%;
+	width: 100%;
+}
+
+.address{
+	grid-area: address;
+	padding: 10%;
+	width: 100%;
+}
+.Bio{
+	padding: 10%;
+	width: 100%
+}
+
+
+
+.fillbox{
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 5%;
+	background-color: white;
+	width: 100%;
+	height: 40px;
+}
+
+.fillbox:hover{
+	 padding: 7px;
+     border: 2px solid black;
+}
+
+#birthday {
+	border: 1px solid grey;
+	border-radius: 3px;
+	padding: 10px;
+	width: 100%;
+	background-color: white;
+	/* width: 155px; */
+	height: 30%;
+}
+
+
+.terms a{
+	text-decoration: blue;
+	
+ }
+
+.submitt {
+    padding: 12px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+    cursor: pointer;
+    color: black;
+    display: inline;
+}
+.submitt:hover{
+	padding: 14px;
+    background-color: green;
+    color: white;
+   
+}
+
+.biography{
+	border: 1px solid grey;
+	border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+	width: 100%;
+	height: 100px;
+    word-break: break-all;
+
+}
 }

@@ -75,5 +75,8 @@ const validateUser = (form) => {
 
     window.open('UI/html/MentorProfile.html', '_self');
   }
+  else {
+    window.open('UI/html/ViewMentors.html');
+  }
 
 };
