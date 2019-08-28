@@ -1,82 +1,91 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-a{
-	color: white;
-	text-decoration: none;
-}
-
 :root {
 	--primary: rgb(12, 151, 70);
 	--dark: #ECF0F1;
-	--light: rgb(228, 225, 225);
-  }
-  html {
-   box-sizing: border-box;
-   font-family:  Calibri; 
+	--light: white;
   }
 
-  footer{
+body{
+	font-family: Calibri ;
+	background-color: var(--light);
+	line-height: 1.7;
+	font-size: 16px;
+}
+footer{
     display: block;
     text-align: center;
     line-height: 1.6;
     background-color: var(--primary);
     bottom: 0;
 }
-  
 h3{
+	text-align: left;
+   	padding-left: 40px;
 	padding: 20px;
 	background-color: var(--primary);
 	height: 80px;
 	color: white;
-	width: 100%;
 }
 
-.signUpContainer{
-	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: 1fr;
-	align-items: center;
-
+a{
+	color: black;
+	text-decoration: none;
 }
 
 .form{
-	padding-left:20px;
-	align-items: center;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-areas: 
+	'picture info';
 }
 
-.profile{ 
-	grid-area: profile;
+ .info{
+	grid-area: info;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--light);
+	width: 400px;
+	font-size: 18px;
 	padding: 10px;
+
+}
+
+
+.picture{
+	grid-area: picture;
+	background-image: url('../assets/others6.jpg');
+	background-size: cover;
+  	background-position: left;
 	width: 100%;
+	padding: 20px;
 }
 
-.address{
-	grid-area: address;
-	padding: 10px;
-	width: 100%;
-}
-.Bio{
-	padding: 10px;
-	width: 100%
+.picture h2{
+		color: var(--primary);
+		font-family: Century Gothic;
+		font-size: 44px;
+		letter-spacing: 2px;
+
 }
 
-.credentials{
-	padding: 10px;
-	width: 100%;
+.picture h6{
+	color: var(--light);
+	font-size: 18px;
+	letter-spacing: 2px;
+	
 }
 
 
-
-.fillbox{
+.fillbox {
+	width: 90%;
 	border: 1px solid grey;
 	border-radius: 3px;
-	padding: 15px;
+	padding: 2.5px;
 	background-color: white;
-	width: 30%;
 	height: 30px;
 }
 
@@ -84,22 +93,9 @@ h3{
 	 padding: 3px;
      border: 2px solid black;
 }
-/* .gender{
 
-} */
-#birthday {
-	border: 1px solid grey;
-	border-radius: 3px;
-	padding: 10px;
-	background-color: white;
-	/* width: 155px; */
-	height: 30%;
-}
-
-
-.terms a{
-	text-decoration: blue;
-	
+ .small{
+	 width: 20px;
  }
 
 .submitt {
@@ -112,7 +108,6 @@ h3{
     display: inline;
 }
 .submitt:hover{
-	padding: 14px;
     background-color: green;
     color: white;
    
@@ -124,110 +119,41 @@ h3{
     padding-left: 5px;
     padding-right: 5px;
     background-color: white;
-	width: 50%;
+	width: 90%;
 	height: 100px;
     word-break: break-all;
 
 }
-a{
-	color: black;
-	text-decoration: none;
-}
 
-@media(max-width: 400px){
-	
-.signUpContainer{
-	width: 100%;
+@media(max-width:700px){
+body{
+	font-size: 14px;
+}
+h3{
+	font-size: 16px;
+}	
+  
+.form{
 	display: grid;
 	grid-gap: 0px;
-	grid-template-columns: 1fr;
-	align-items: center;
-	line-height: 1.3;
-
+	grid-template-areas:  
+	'info';
 }
 
-.form{
-	/* display: grid;
-	grid-gap: 10px;
-    grid-template-areas: 
-     'profile address'; */
-	padding-left:20px;
-	align-items: center;
-}
-
-.profile{ 
-	grid-area: profile;
-	padding: 10%;
+ .info{
+	grid-area: info;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--light);
 	width: 100%;
-}
-
-.address{
-	grid-area: address;
-	padding: 10%;
-	width: 100%;
-}
-.Bio{
-	padding: 10%;
-	width: 100%
-}
-
-
-
-.fillbox{
-	border: 1px solid grey;
-	border-radius: 3px;
-	padding: 5%;
-	background-color: white;
-	width: 100%;
-	height: 40px;
-}
-
-.fillbox:hover{
-	 padding: 7px;
-     border: 2px solid black;
-}
-
-#birthday {
-	border: 1px solid grey;
-	border-radius: 3px;
-	padding: 10px;
-	width: 100%;
-	background-color: white;
-	/* width: 155px; */
-	height: 30%;
-}
-
-
-.terms a{
-	text-decoration: blue;
-	
- }
-
-.submitt {
-    padding: 12px;
-	border: 1px solid black;
-	border-radius: 5px;
-	background-color: white;
-    cursor: pointer;
-    color: black;
-    display: inline;
-}
-.submitt:hover{
-	padding: 14px;
-    background-color: green;
-    color: white;
-   
-}
-
-.biography{
-	border: 1px solid grey;
-	border-radius: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    background-color: white;
-	width: 100%;
-	height: 100px;
-    word-break: break-all;
+	font-size: 18px;
+	padding: 15px;
 
 }
+
+.picture{
+		display: none;
+	}
+
 }
+
