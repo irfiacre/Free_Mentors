@@ -115,6 +115,7 @@
 	overflow: auto; 
 	background-color: var(--light);
 	background-color: rgba(18, 54, 37, 0.4);
+	cursor: pointer;
   }
   
   .modal-content {
