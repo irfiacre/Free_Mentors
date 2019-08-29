@@ -11,7 +11,9 @@ const users=[
         expertise: 'javascript',
         is_admin: true,
         is_mentor: false,
+
       },
+
       {
         id: 2,
         firstName: 'Uwase',

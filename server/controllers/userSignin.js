@@ -21,7 +21,9 @@ const signin = async(req,res)=>{
         }
     const token = jwt.sign({
         id: user.id,
-        email: req.body.email
+        email: req.body.email,
+        is_admin :user.is_admin,
+        is_mentor : user.is_mentor
     },'jwtprivatekey');
      
     res.status(200).json({
