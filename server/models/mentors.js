@@ -10,7 +10,7 @@ const mentors = [
         occupation: 'Business Marketing',
         expertise: 'basketball player',
         isAdmin: false,
-        isMentor: true,
+        isMentor: true
       },
 
       {
@@ -24,7 +24,7 @@ const mentors = [
         occupation: 'Actress, Tv host,...',
         expertise: 'actress',
         isAdmin: false,
-        isMentor: true,
+        isMentor: true
       }
     
     
