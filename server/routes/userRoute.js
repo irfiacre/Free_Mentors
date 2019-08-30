@@ -8,6 +8,7 @@ import allMentors from '../controllers/allMentors';
 import specificMentor from '../controllers/specificMentor';
 import sessionValidator  from'../middleware/sessionValidator';
 import session  from'../controllers/session';
+import userSessions  from'../controllers/allUSERsessions';
 
 
 const route = express.Router();
@@ -18,6 +19,7 @@ route.post('/api/v1/auth/signup',signupValidater,signup);
 route.get('/api/v1/mentors',Authorisation,allMentors);
 route.get('/api/v1/mentors/:mentorId',Authorisation,specificMentor);
 route.post('/api/v1/sessions', [Authorisation,sessionValidator],session);
+route.get('/api/v1/sessions',Authorisation,userSessions);
 
 
 module.exports = route;
