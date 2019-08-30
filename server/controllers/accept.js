@@ -1,4 +1,6 @@
-const sessions = require('../models/sessions');
+
+import  sessions from '../models/sessions';
+import  mentorSession from '../models/mentorSessions'
 
 const acceptingSession=(req,res)=>{
     const session=sessions.find((objectof)=>objectof.sessionId === parseInt(req.params.sessionId));
@@ -10,17 +12,13 @@ const acceptingSession=(req,res)=>{
     }
 
     if (session.status === 'accepted') {
-        return res.status(200).json({
-          status: 200,
+        return res.status(401).json({
+          status: 401,
           error: 'This session is already accepted',
         });
-     
-    }
-
- const accepting =sessions.findIndex((obj)=> obj.sessionId === parseInt(req.params.sessionId));
+      }
+const accepting =sessions.findIndex((obj)=> obj.sessionId === parseInt(req.params.sessionId));
 sessions[accepting].status= "accepted" ;
-
-
 
 const acceptSession = {
         sessionId : session.sessionId,
@@ -30,9 +28,7 @@ const acceptSession = {
         menteeEmail : req.userData.email,
         status:"accepted",
 }
-
-
-sessions.push(acceptSession);
+mentorSession.push(acceptSession);
 
 return res.status(200).json({
     status: 200,
