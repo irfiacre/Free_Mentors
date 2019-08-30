@@ -6,7 +6,6 @@
         score : 3,
         menteeFullName: 'KARAKE Original',
         remark : 'gdhgcjhdsgfhasggfghjgghjbdsajhbhghsa',
-        status: false,
     }
  ];
 
