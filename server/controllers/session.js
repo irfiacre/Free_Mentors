@@ -21,6 +21,7 @@ const Sessions = async(req,res)=>{
     }
 
     mentorSessions.push(newSession);
+    sessions.push(newSession);
     
     res.status(200).json({
         status:200,
