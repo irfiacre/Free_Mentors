@@ -9,6 +9,8 @@ import specificMentor from '../controllers/specificMentor';
 import sessionValidator  from'../middleware/sessionValidator';
 import session  from'../controllers/session';
 import userSessions  from'../controllers/allUSERsessions';
+import userReview  from'../controllers/review';
+import reviewValidater  from'../middleware/reviewValidater';
 
 
 const route = express.Router();
@@ -20,6 +22,8 @@ route.get('/api/v1/mentors',Authorisation,allMentors);
 route.get('/api/v1/mentors/:mentorId',Authorisation,specificMentor);
 route.post('/api/v1/sessions', [Authorisation,sessionValidator],session);
 route.get('/api/v1/sessions',Authorisation,userSessions);
+route.post('/api/v1/sessions/:sessionId/review',[Authorisation,reviewValidater],userReview);
 
 
-module.exports = route;
+
+export default route;
