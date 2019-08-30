@@ -1,4 +1,6 @@
 import bcrypt  from 'bcrypt';
+import '@babel/plugin-transform-regenerator';
+import '@babel/polyfill';
 import jwt  from 'jsonwebtoken';
 import users from '../models/users';
 
