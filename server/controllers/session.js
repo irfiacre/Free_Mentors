@@ -4,16 +4,17 @@ import mentorSessions from '../models/mentorSessions';
 
 
 const Sessions = async(req,res)=>{
-    const mentorCheck = mentors.find((object)=>object.mentorId === req.body.mentorId);
+    const mentorCheck = mentors.find((object)=>object.mentorId === parseInt(req.body.mentorId));
     if(!mentorCheck){
         return res.status(404).json({
             status: 404,
             message:"mentor not found"
         })
     }
+
     const newSession = {
         sessionId : sessions.length+1,
-        mentorId : req.body.mentorId,
+        mentorId : parseInt(req.body.mentorId),
         menteeId : req.userData.id,
         questions : req.body.questions,
         menteeEmail : req.userData.email,
