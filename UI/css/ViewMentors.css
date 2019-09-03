@@ -52,20 +52,24 @@ nav {
     
     min-height: 70px;
     display: grid;
+    grid-gap: 30%;
     grid-template-columns: repeat(2,1fr);
     background-color: var(--primary);
     
   }
   .nav-links{
-      margin-top: 40px;
+      margin-top: 60px;
       display: flex;
       justify-content: space-around;
       width: 100%;
   }
 
-  .nav-links a {
+   .nav-links a {
       letter-spacing: 3px;
   }
+   .nav-links a:hover {
+	color: black;
+} 
   .nav-links li{
       list-style: none;
   }
@@ -96,10 +100,13 @@ nav {
 #profilepic{
 	border: 2px solid var(--dark);
     border-radius: 50%;
+    margin-top: -20px;
+}
+#profilepic:hover{
+	padding: 0.2px;
 }
 
 .viewmentors {
-    /* margin-top: 10px; */
     border-radius: 2px;
     display: grid;
     grid-gap: 5px;
@@ -110,14 +117,10 @@ nav {
 
 .activities {
     grid-area: activities;
-    /* position: fixed; */
     background-color: var(--light);
-    /* width: 250px;
-    height: 535px; */
     padding: 10px;
     border-radius: 2px;
     padding: 20px;
-    /* margin-top: 90px; */
     line-height: 2;
   
 }
@@ -131,14 +134,12 @@ nav {
 
 .mentors {
     grid-area: mentors;
-    /* margin-left: 300px;
-    margin-top: 90px; */
     background-color: var(--light);
  
     border-radius: 2px;
     display: grid;
     grid-template-areas: 
-    ' mentor mentor';
+    ' mentor mentor mentor';
 }
 
 
@@ -150,6 +151,9 @@ nav {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
   }
+  .mentor img{
+      height: 300px;
+  }
 .mentors h1 {
     text-align: center;
     padding: 5px;
@@ -157,10 +161,7 @@ nav {
 
 .others {
     grid-area: others;
-    /* grid-gap: 10px; */
     background-color: var(--light);
-    /* margin-top: 90px; */
-
 }
 
 .others1 {

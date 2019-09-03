@@ -11,7 +11,7 @@
 
 body{
 	font-family: Calibri ;
-	background-color: var(--light);
+	background-color: rgba(12, 151, 70, 0.048);
 	line-height: 1.7;
 	font-size: 16px;
 }
@@ -38,9 +38,12 @@ a{
 
 .form{
 	display: grid;
-	grid-gap: 0px;
+	grid-gap: 70px;
 	grid-template-areas: 
 	'picture info';
+}
+.information{
+	padding: 10px;
 }
 
  .info{
@@ -48,9 +51,11 @@ a{
 	display: flex;
 	flex-direction: column;
 	background-color: var(--light);
-	width: 400px;
+	width: 90%;
 	font-size: 18px;
-	padding: 10px;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
 
@@ -59,22 +64,24 @@ a{
 	grid-area: picture;
 	background-image: url('../assets/others6.jpg');
 	background-size: cover;
-  	background-position: left;
+	background-position: left;
+	background-attachment: fixed;
 	width: 100%;
 	padding: 20px;
 }
 
 .picture h2{
+		margin-top: 45%;
 		color: var(--primary);
 		font-family: Century Gothic;
-		font-size: 44px;
+		font-size: 70px;
 		letter-spacing: 2px;
 
 }
 
 .picture h6{
 	color: var(--light);
-	font-size: 18px;
+	font-size: 24px;
 	letter-spacing: 2px;
 	
 }
@@ -82,16 +89,17 @@ a{
 
 .fillbox {
 	width: 90%;
-	border: 1px solid grey;
+	border: 2px solid var(--dark);
 	border-radius: 3px;
-	padding: 2.5px;
+	padding: 5px;
 	background-color: white;
 	height: 30px;
 }
 
 .fillbox:hover{
-	 padding: 3px;
-     border: 2px solid black;
+	 padding: 10px;
+	 border: 1px solid grey;
+     
 }
 
  .small{
@@ -99,17 +107,19 @@ a{
  }
 
 .submitt {
+
     padding: 12px;
-	border: 1px solid black;
+	border: 1px solid var(--dark);
 	border-radius: 5px;
-	background-color: white;
+	background-color: var(--primary);
     cursor: pointer;
-    color: black;
-    display: inline;
+    color: white;
+	width: 30%;
 }
 .submitt:hover{
-    background-color: green;
-    color: white;
+    background-color: white;
+	color: black;
+	border: 1px solid black;
    
 }
 
@@ -118,7 +128,7 @@ a{
 	border-radius: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: white;
+	background-color: white;
 	width: 90%;
 	height: 100px;
     word-break: break-all;
@@ -130,7 +140,7 @@ body{
 	font-size: 14px;
 }
 h3{
-	font-size: 16px;
+	font-size: 16px;`	
 }	
   
 .form{

@@ -39,6 +39,7 @@
 <div class="profile">
 	<img src="../assets/mentor.jpg"  id="mentorprofile">
 	<div class="mentor_info">
+		<h4>Information</h4>
 	<p><b>Name:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Micheal Jordan</p>
 	<p><b>Status:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentor</p>
 	<p><b>Age:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 56years</p>
@@ -64,13 +65,14 @@
    
   <div class="modal-body">
 	<form action="">
-		<p>Why do you want this Mentorship Session:</p> 
-		<input type="textbox" name="" id="textboxs" placeholder="What will you be talking about?" required ><br><br>
-		<p>Mentorship Session's Time:</p>
-		<input type="datetime-local"  id="date" required ><br><br>
+		<label for="questions"><h5> What questions do you have ?</h5></label>
+		<input type="textbox" name="questions" id="textbox" placeholder="Questions you be talking about?" required ><br>
+		
+		<label for="date"><h5>Mentorship Session's Time:</h5></label>
+		<input type="datetime-local" name="date" id="date" required ><br> <br>
 			
-		<input type="submit" name="request" id="buttons" value="SEND REQUEST">&nbsp; 
-		<button type="reset" id="buttons">RESET</button><br>
+		<input type="submit" name="request" class="buttons" id="send" value="SEND REQUEST"> <br><br> 
+		<button type="reset" class="buttons" id="reset">RESET</button><br>
     </form>
    </div>
  </div>

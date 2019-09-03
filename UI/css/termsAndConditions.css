@@ -16,21 +16,14 @@
    font-family:  Calibri; 
   
   }
-  
-  body {
-	background: var(--dark);
-	line-height: 1.4;
-  }
 
 .body{
 	font-family: calibri;
 	font-size: 18px;
 	padding: 30px;
 	text-align: left;
-	border: 1px solid grey;
 	line-height: 1.4;
 	background-color:  var(--light);
-
 }
 a{
 	color: white;
@@ -53,86 +46,96 @@ footer{
 	text-align: center;
 	line-height: 1.6;
 	background-color: var(--primary);
-	bottom:0;
+	bottom: 0;
+	margin-top: 30px;
   }
+  
   
 
 nav {
     min-height: 70px;
   	display: grid;
-	  grid-gap: 190px;
+	grid-gap: 60%;
     grid-template-columns: repeat(2,1fr);
     background-color: var(--primary);
   
   }
   .nav-links{
-       margin-top: 40px;
+      margin-top: 60px;
       display: flex;
-      justify-content: space-around;
-      width: 100%;
+	  justify-content: space-around;
+	  width: 90%;
   }
+ 
 
   .nav-links a {
-      letter-spacing: 3px;
+      letter-spacing: 1px;
   }
+  .nav-links a:hover {
+	color: black;
+} 
   .nav-links li{
       list-style: none;
   }
 
-  #uplogo{
-
-	border-radius: 5px;
-	margin-top: 30px;
-  margin-left: 10px;
-  
-  }
-  
   #profilepic{
 	width: 35px;
 	height: 35px; 
     border: 2px solid var(--light);
-    border-radius: 50%;
+	border-radius: 50%;
+	margin-top: -14px; 
   }
-
-  nav {
-	min-height: 70px;
-	display: grid;
-	grid-gap: 5px;
-	grid-template-columns: repeat(2,1fr);
-	background-color: var(--primary);
-  
-  }
-  .nav-links{
-	   margin-top: 50px;
-	  display: flex;
-	  justify-content: space-around;
-	  width: 100%;
-  }
-
-
-  
 
   #uplogo{
+
 	border-radius: 1px;
-	margin-top: 40px;
+	margin-top: 30px;
   }
   
   #profilepic{
 	width: 35px;
 	height: 35px;
   } 
+  @media(min-height: 1000px){
+	footer{
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
+		background-color: var(--primary);
+		text-align: center;
+		
+	  }
+  }
 
   @media(max-width:720px){
+	  
+	nav {
+		min-height: 70px;
+		display: grid;
+		grid-gap: 10%;
+		grid-template-columns: repeat(2,1fr);
+		background-color: var(--primary);
+	
+	}
+	.nav-links{
+		margin-top: 60px;
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+	}
+
+
 	.body{
 		font-family: calibri;
 		font-size: 18px;
 		padding: 30px;
 		text-align: left;
-		border: 1px solid grey;
 		line-height: 1.4;
 		background-color:  var(--light);
-		
-	}
+		}
 
 	.all{
 		display: grid;
