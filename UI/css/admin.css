@@ -48,6 +48,7 @@ footer{
 }
 
 
+
   .admin_container{
 	display: grid;
     grid-gap: 10px;
@@ -57,42 +58,43 @@ footer{
   nav {
     min-height: 70px;
   	display: grid;
-	  grid-gap: 190px;
+	  grid-gap: 50%;
     grid-template-columns: repeat(2,1fr);
     background-color: var(--primary);
-  
+    padding: 5px;
   }
+
   .nav-links{
-       margin-top: 40px;
+      margin-top: 62.5px;
       display: flex;
       justify-content: space-around;
       width: 100%;
   }
 
   .nav-links a {
-      letter-spacing: 3px;
+      letter-spacing: 1px;
   }
   .nav-links li{
       list-style: none;
   }
 
   #uplogo{
-
-	border-radius: 5px;
+  border-radius: 5px;
 	margin-top: 30px;
   margin-left: 10px;
-  
   }
   
   #profilepic{
-	width: 35px;
-	height: 35px; 
+    margin-top: -19px;
+	  width: 35px;
+	  height: 35px; 
     border: 2px solid var(--light);
     border-radius: 50%;
   }
 
   .admin_body{
-
+  margin-top: -10px;  
+  padding: 11px;
 	display: grid;
 	grid-gap: 10px;
 	grid-template-areas: 
@@ -100,20 +102,21 @@ footer{
    'mentors_users mentors_users mentors_users mentors_users mentors_users';
    
   }
+  .admin_conontainer2{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+  }
   
 
 .adminprofile{
 	grid-area: adminprofile;
-	/* position: fixed; */
 	color: black;
 	padding: 10px;
 	background-color: var(--light);
-	/* width: 225px; */
-	/* height: 500px; */
-	/* margin-left: 5px; */
 	border-radius: 5px;
 	line-height: 1.5;
-	width: 100%;
+  width: 100%;
     
 
 }
@@ -133,20 +136,17 @@ footer{
 
 
 .information{
-	   /* width: 1000px; */
 	   grid-area: information;
 	   color: black;
-	   /* margin-top: 100px; */
 	   border-radius: 5px;
 	   background-color: var(--light);
-	   width: 100%;
-	   /* height: 800px; */
-	   padding: 3px;
+	   width: 98%;
+	   padding: 30px;
 	   border-radius: 5px;
 }
 
 
-#analytics{
+.analytics{
 	border: 1px solid var(--dark);
 	border-radius: 2px;
 }
@@ -156,13 +156,14 @@ footer{
 
 .mentors_users{
      grid-area: mentors_users;
-	/* display: block; */
-    /* margin-left: 250px; */
  	background-color: var(--light);
  	border-radius: 5px;
  	color: black; 
-
 }
+.mentors_users a{
+  color: #000;
+}
+
  table{
 	width: 100%;
 }
@@ -180,13 +181,10 @@ footer{
 
  .info{
 	width: 90%;
-	/* height: 70px; */
-	/* padding: 5px; */
 	border: 1px solid var(--dark);
 	border-radius: 2px;
 }
 
-/* BUTTONS AND POPUP */
 .buttons{
 	float: right;
 }
@@ -202,7 +200,6 @@ footer{
 	background-color: var(--light);
     cursor: pointer;
     color: black;
-    /* display: inline; */
     
 }
 #users:hover{
@@ -218,7 +215,6 @@ footer{
 	background-color: var(--primary);
     cursor: pointer;
     color: var(--light);
-    /* display: inline; */
 	
 	
 }
@@ -345,9 +341,23 @@ footer{
    
 }
 
+@media(min-height:1000px){
+  footer{
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: var(--primary);
+    text-align: center;
+    
+  }
+}
 
 
-@media(max-width: 600px){
+
+@media(max-width: 800px){
 
   
   .admin_container{
@@ -375,13 +385,18 @@ footer{
 	.admin_body{
 
 		display: grid;
-		grid-gap: 3px;
+		grid-gap: 5px;
 		grid-template-areas: 
 		 'adminprofile'
-		 'information'
-     'mentors_users';
+		 'information';
      
-	}
+  }
+  .adminprofile{
+    width: 100%;
+  }
+  .information{
+    width: 100%;
+  }
 	
 
     #uplogo{
@@ -408,7 +423,8 @@ footer{
 
 	.admin_info{
     margin-left: 35px;
-		margin-top: 10px;
+    margin-top: 10px;
+    width: 60%;
 		line-height: 2;
 		text-align: justify;
 	}
@@ -429,7 +445,9 @@ footer{
 			width: 60%;
 			border: 1px solid var(--dark);
 			border-radius: 2px;
-		}
+    }
+  }
+    
 	
 
 	@media(max-width: 450px)  {
@@ -478,5 +496,14 @@ footer{
 .modal-body p {
 	margin-left: 0px;
    
+}
+#footer{
+  position: absolute;
+  bottom: -6050px;
+  display: block;
+  text-align: center;
+  line-height: 1.4;
+  width: 100%;
+  background-color: var(--primary);
 }
 }
