@@ -29,53 +29,13 @@
 	  max-width: 100%;
   }
   
-  footer{
-    display: block;
-    text-align: center;
-    line-height: 1.6;
-    background-color: var(--primary);
-    bottom: 0;
-}
-
-
   .mentor_container{
 	display: grid;
     grid-gap: 10px;
     grid-template-columns: 1fr;
 }
  
-nav {
-    
-    min-height: 70px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    background-color: var(--primary);
-    
-  }
-  .nav-links{
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-  }
 
-  .nav-links a {
-      letter-spacing: 3px;
-  }
-  .nav-links li{
-      list-style: none;
-  }
-
-  
-  .burger div{
-    width: 25px;
-    height: 2px;
-    background-color: var(--light);
-    margin: 5px;
-  }
-  .burger{
-    display: none;
-  }
 
   #profilepic{
   	  width: 30px;
@@ -84,11 +44,6 @@ nav {
 	  border-radius: 50%;
   }
 
-  #uplogo{
-	  border-radius: 5px;
-	  margin-top: 30px;
-	  margin-left: 10px;
-  }
 
 
 .mentor_all {
@@ -96,16 +51,13 @@ nav {
 	display: grid;
 	grid-gap: 10px;
 	grid-template-areas: 
-	 'profile biography biography biography'
-	 'profile mentor_body mentor_body mentor_body';
+	 'profile biography biography biography';
 }
 
 #mentorprofile{
 	margin-top: 10px;
 	border: 3px solid gray;
 	border-radius: 10%;
-	/* height: 180px;  */
-
 }
 .profile .mentor_info{
 
@@ -154,6 +106,13 @@ nav {
  	color: black; 
  	padding: 3px;
  }
+
+ .mentorBody{
+	 background-color: white;
+	 margin-top: 10px;
+	 height: 500px;
+ }
+ 
  .sessions {
 	 margin-left: 20px;
 	 margin-right: 20px;
@@ -164,7 +123,6 @@ nav {
  }
 tr td {
 	padding: 5px;
-	border-left: 2px solid var(--dark);
 
 
 }
@@ -173,8 +131,25 @@ tr td {
 	margin-right: 20px;
 }
 
- #requestbtn1 {
+.accepted{
 	padding: 12px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+	background-color: var(--primary);
+    cursor: pointer;
+    color: white;
+}
+.declined{
+	padding: 12px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+	background-color: rgba(114, 2, 2, 0.808) ;
+    cursor: pointer;
+    color: white;
+}
+
+ #requestbtn1 {
+	padding: 14px;
 	border: 2px solid lightgrey;
 	border-radius: 5px;
 	background-color: var(--light);
@@ -188,7 +163,7 @@ tr td {
 }
 
 #requestbtn2 {
-	padding: 12px;
+	padding: 14px;
 	border: 2px solid lightgrey;
 	border-radius: 5px;
 	background-color: var(--light);
@@ -203,31 +178,10 @@ tr td {
 }
 
 
+
 @media(max-width: 620px){
 
-	.nav-links {
-        position: fixed;
-		right: 0px;
-		height: 20vh;
-		top: 7.5vh;
-        background-color: var(--primary);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 30%;
-        height: 30%;
-        border-bottom: 1px solid white;
-		transform: translateX(130%);
-		transition: transform 0.5s ease-in;
-	}
 
-
-	.burger{
-        margin-top: 40px;
-        margin-left: 90px;
-		display: block;
-		cursor: pointer;
-    }
 
 
     
@@ -288,7 +242,9 @@ tr td {
 
 @media(max-width: 470px){
 	
-	
+	.nav-links{
+		margin-top: -10px;
+	}
 	.mentor_all{
 		margin: 3px;
 		display: grid;
@@ -331,9 +287,13 @@ tr td {
    .requests {
 		padding: 0px;
   }
+  .sessions {
+	margin-left: 0px;
+	margin-right: 0px;
+}
   
    #requestbtn1 {
-	  padding: 4px;
+	  padding: 2px;
 	  border: 1px solid lightgrey;
 	  border-radius: 3px;
 	  background-color: var(--light);
@@ -348,7 +308,7 @@ tr td {
   }
   
   #requestbtn2 {
-	  padding: 4px;
+	  padding: 2px;
 	  border: 1px solid lightgrey;
 	  border-radius: 3px;
 	  background-color: var(--light);
@@ -362,6 +322,25 @@ tr td {
 	  background-color: rgba(114, 2, 2, 0.808);
 	  color: var(--light);
   }
+
+  .accepted{
+	padding: 2px;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
+	background-color: var(--primary);
+	cursor: pointer;
+	color: white;
+	font-size: 12px;
+}
+.declined{
+	padding: 2px;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
+	background-color: rgba(114, 2, 2, 0.808);
+	cursor: pointer;
+	color: white;
+	font-size: 12px;
+}
   
 
 	
