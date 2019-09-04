@@ -122,6 +122,8 @@ it('should validate the user', (done) => {
     .post('/api/v1/auth/signin')
     .send(newUser)
     .end((err, res) => {
+      console.log(res.body);
+      
       expect(res.statusCode).to.equal(404);
       expect(res).to.have.status(404);
     });
