@@ -62,7 +62,7 @@
   	  background-position: center;
 	  height: 600px;
 	  padding: 10px;
-	
+
   }
 
   nav {
@@ -70,12 +70,15 @@
 	  justify-content: space-around;
 	  align-items: center;
 	  min-height: 80px;
-
 	}
 	.nav-links{
 		display: flex;
 		justify-content: space-around;
 		width: 30%;
+	}
+	.nav-links :hover {
+		color: var(--primary);
+		padding: 0px;
 	}
 
 	.nav-links :hover{
@@ -233,7 +236,6 @@
 		font-family: Century Gothic;
 		line-height: 1.5;
 		background-color: var(--light);
-		/* height: 350px; */
 	}
 
 .intro a {
