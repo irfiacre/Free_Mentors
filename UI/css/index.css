@@ -9,15 +9,26 @@
 	--dark: #ECF0F1;
 	--light: white;
   }
+ 
+
   html {
-   box-sizing: border-box;
-   font-family:  Calibri; 
+	height: 100%;
+	box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+	box-sizing: inherit;
   }
   
   body {
-	  background: var(--dark);
-	  line-height: 1.4;
-	  margin: 0px;
+	 
+	  position: relative;
+	  margin: 0;
+	  padding-bottom: 6rem;
+	  min-height: 100%;
+	  font-family:  Calibri;
 	  
   }
   a {
@@ -30,13 +41,18 @@
   }
 
   #footer{
+
 	  position: absolute;
-	  display: block;
-	  text-align: center;
-	  line-height: 1.4;
-	  width: 100%;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  padding: 1rem;
 	  background-color: var(--primary);
+	  text-align: center;
+	  
   }
+
+
 
   .header1 {
 	  display: grid;
@@ -46,6 +62,7 @@
   	  background-position: center;
 	  height: 600px;
 	  padding: 10px;
+
   }
 
   nav {
@@ -62,6 +79,10 @@
 	.nav-links :hover {
 		color: var(--primary);
 		padding: 0px;
+	}
+
+	.nav-links :hover{
+		color: var(--primary);
 	}
 
 	.nav-links a {
@@ -94,15 +115,30 @@
 		letter-spacing: px;
 	}
 	.cover0 h4{
-
 		font-size: 32px;
 		color: var(--primary);
 		letter-spacing: 8px;
-		
-		
 	}
 
-	
+		#btn2 {
+
+		font-family: Century Gothic;
+		font-size: 17px;
+		width: 200px;
+		padding: 13px;
+		border: 1px solid var(--primary);
+		border-radius: 5px;
+		background-color:  var(--primary);
+		cursor: pointer;
+		color:  var(--light);
+		opacity: 0.8;
+	}
+	   #btn2:hover {
+		padding: 14px;
+        background-color: var(--light);
+		color: black;
+		opacity: 1;
+	}
 
 
 .modal {
@@ -117,6 +153,7 @@
 	overflow: auto; 
 	background-color: var(--light);
 	background-color: rgba(18, 54, 37, 0.4);
+	cursor: pointer;
   }
   
   .modal-content {
@@ -125,9 +162,8 @@
 	margin: auto;
 	padding: 0;
 	border: 1px solid #888;
-	/* margin-left: 30px; */
-	width: 30%;
-	height: 60%;
+	width: 25%;
+	height: 50%;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   
@@ -148,35 +184,31 @@
   }
   
   .modal-header {
-	padding: 2px 16px;
+	padding: 6px 24px;
 	background-color: var(--primary);
 	border-radius: 10px 10px 0 0;
 	color: white;
   }
   
   .modal-body {
+	  padding-top: 15%;
+	  padding-bottom: 15%;
 	  margin-left: 10px;
 	  text-align: center;
   }
-  
-  .modal-body p {
-	  margin-left: 0px;
-	 
-  }
-  
-  #textboxs{
-	  border: 1px solid grey;
-	  border-radius: 3px;
-	  padding: 5px;
-	  background-color: white;
-	  width: 200px;
-	  height: 35px;
-  }
-  #textboxs:hover{
-	   background-color: var(--dark);
-	   /* border: 1px solid grey; */
-	   border: none;
-  }
+
+.textbox {
+    border: 1px solid grey;
+	border-radius: 3px;
+	padding: 7px;
+	background-color: white;
+	width: 80%;
+	
+}
+.textbox:hover {
+    padding: 8px;
+    border: 2px solid var(--primary);
+}
 
   #btn1 {
 	
@@ -188,83 +220,27 @@
 	background-color: var(--primary);
 	cursor: pointer;
 	color:  white;
+	width: 80%;
 }
 
 #btn1:hover {
 	padding: 14px;
-	background-color: white;
-	color: black;
-	opacity: 1;
+	border: 2px solid var(--primary);
 }
 
 
-	.body{
+.last-content{
 		color: black;
 		border:1px solid var(--light);
-		/* width: 40%; */
 		padding: 10px;
 		font-family: Century Gothic;
 		line-height: 1.5;
-		background-color: rgba(238, 238, 238, 0.603);
-		height: 350px;
-	}
-	.intro a {
-		color: black;
+		background-color: var(--light);
 	}
 
-	
-	#btn2 {
-
-		font-family: Century Gothic;
-		font-size: 17px;
-		width: 200px;
-		padding: 13px;
-		border: 1px solid var(--primary);
-		border-radius: 5px;
-		background-color:  var(--primary);
-		cursor: pointer;
-		color:  var(--light);
-		opacity: 0.8;
+.intro a {
+		color: var(--primary);
 	}
-	#btn2:hover {
-		padding: 14px;
-        background-color: var(--light);
-		color: black;
-		opacity: 1;
-	}
-
-
- 
- #btn1 {
-
-    font-family:Calibri;
-    font-size: 16px;
-    padding: 15px;
-    border: 1px solid var(--dark);
-    border-radius: 5px;
-    background-color:  var(--primary);
-    cursor: pointer;
-    color:  var(--light);
-}
-.textbox {
-    border: 1px solid grey;
-	border-radius: 3px;
-	padding: 15px;
-	background-color: white;
-	
-}
-.textbox:hover {
-    padding: 16px;
-    border: 2px solid black;
-}
-
-
-#btn1:hover {
-    padding: 17px;
-    background-color: var(--light);
-    color: black;
-    opacity: 1;
-} 
 
 
 
@@ -276,13 +252,11 @@
 		right: 0px;
 		height: 10vh;
 		top: 14vh;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 51%;
+		display: inline-block;
+		width: 34%;
 		height: 10%;
 		transform: translateX(100%);
-		transition: transform 0.5s ease-in;
+		line-height: 1.7;
 	}
 
 	.burger{
@@ -292,6 +266,7 @@
 	.cover0{
 		margin-top: 10%;
 	}
+
 	.cover0 h1 {
 		color: var(--light);
 		font-family: Century Gothic;
@@ -299,17 +274,15 @@
 		letter-spacing: 1px;
 	}
 	.cover0 h4{
-		/* margin-top: -50px; */
 		font-size: 22px;
 		color: var(--primary);
 		letter-spacing: 8px;
-		/* width: 700px; */
 		
 	}
 	
 	#footer{
 		position: absolute;
-		bottom: -850px;
+		bottom: -650px;
 		display: block;
 		text-align: center;
 		line-height: 1.4;
@@ -344,11 +317,9 @@
 			letter-spacing: 1px;
 		}
 		.cover0 h4{
-			/* margin-top: -50px; */
 			font-size: 22px;
 			color: var(--primary);
 			letter-spacing: 8px;
-			/* width: 700px; */
 		}
 
 			
