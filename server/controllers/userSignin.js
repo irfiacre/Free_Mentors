@@ -21,6 +21,7 @@ const signin = async(req,res)=>{
                 error: "Password not found"
             })
         }
+        
     const token = jwt.sign({
         id: user.id,
         email: req.body.email,
