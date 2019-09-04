@@ -55,43 +55,6 @@ footer{
     grid-template-columns: 1fr;
   }
 
-  nav {
-    min-height: 70px;
-  	display: grid;
-	  grid-gap: 50%;
-    grid-template-columns: repeat(2,1fr);
-    background-color: var(--primary);
-    padding: 5px;
-  }
-
-  .nav-links{
-      margin-top: 62.5px;
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-  }
-
-  .nav-links a {
-      letter-spacing: 1px;
-  }
-  .nav-links li{
-      list-style: none;
-  }
-
-  #uplogo{
-  border-radius: 5px;
-	margin-top: 30px;
-  margin-left: 10px;
-  }
-  
-  #profilepic{
-    margin-top: -19px;
-	  width: 35px;
-	  height: 35px; 
-    border: 2px solid var(--light);
-    border-radius: 50%;
-  }
-
   .admin_body{
   margin-top: -10px;  
   padding: 11px;
@@ -155,10 +118,11 @@ footer{
 }
 
 .mentors_users{
-     grid-area: mentors_users;
+  grid-area: mentors_users;
  	background-color: var(--light);
  	border-radius: 5px;
- 	color: black; 
+   color: black; 
+   padding: 10px;
 }
 .mentors_users a{
   color: #000;
@@ -180,9 +144,10 @@ footer{
  }
 
  .info{
-	width: 90%;
+	width: 87%;
 	border: 1px solid var(--dark);
-	border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 29px;
 }
 
 .buttons{
@@ -253,9 +218,6 @@ footer{
 
 
 
-
-
-
 .modal {
   display: none;
   position: fixed;
@@ -278,8 +240,8 @@ footer{
   border: 1px solid #888;
   font-size: 14px;
   line-height: 0.5;
-  width: 80%;
-  height: 80%;
+  width: 30%;
+  height: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
@@ -299,27 +261,25 @@ footer{
 }
 
 .modal-header {
-  padding: 2px 16px;
-  height: 100px;
+  padding: 16px 10px;
+  height: 50px;
   background-color: var(--primary);
   color: white;
 }
 
 .modal-body {
-    margin-left: 100px;
+    margin-top: 45px;
+    margin-left: 17%;
 }
 
-.modal-body p {
-	margin-left: 0px;
-   
-}
+
 
 #textboxs{
     border: 1px solid grey;
     border-radius: 3px;
     padding: 5px;
     background-color: white;
-    width: 200px;
+    width: 80%;
     height: 35px;
 }
 #textboxs:hover{
@@ -333,6 +293,7 @@ footer{
     background-color: white;
     cursor: pointer;
     color: black;
+    width: 80%;
 }
 #buttons:hover{
     padding: 14px;
@@ -366,19 +327,9 @@ footer{
       grid-template-columns: 1fr;
     }
   
-    nav {
-      min-height: 70px;
-      display: grid;
-      grid-gap: 50px;
-      grid-template-columns: repeat(2,1fr);
-      background-color: var(--primary);
-    
-    }
+ 
     .nav-links{
-         margin-top: 50px;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
+    font-size: 12px;
     }
   
 
@@ -402,12 +353,7 @@ footer{
     #uplogo{
       border-radius: 1px;
       margin-top: 40px;
-    }
-    
-    #profilepic{
-      width: 35px;
-      height: 35px;
-	} 
+    } 
 
 	.adminprofile {
 		width: 100%;
