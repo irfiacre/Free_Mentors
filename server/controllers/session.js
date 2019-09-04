@@ -1,10 +1,10 @@
-import mentors from '../models/mentors';
+import mentors from '../models/users';
 import sessions from '../models/sessions';
 import mentorSessions from '../models/mentorSessions';
 
 
 const Sessions = async(req,res)=>{
-    const mentorCheck = mentors.find((object)=>object.mentorId === parseInt(req.body.mentorId));
+    const mentorCheck = mentors.find((object)=>object.id === parseInt(req.body.mentorId));
     if(!mentorCheck){
         return res.status(404).json({
             status: 404,

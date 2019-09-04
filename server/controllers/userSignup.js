@@ -28,9 +28,8 @@ const signup = async(req,res)=>{
 
     const token = jwt.sign({
         id: newUser.id,
-        fullname:(newUser.firstName + newUser.lastName),
         email : newUser.email,
-        is_mentor: newUser.is_mentor,
+        // is_mentor: newUser.is_mentor,  
         is_admin: newUser.is_admin
     },'jwtprivatekey');
    
@@ -44,8 +43,10 @@ const signup = async(req,res)=>{
         data:{
             token,
             message:"user successfuly created"
-        }
+            
+        }    
     })
+    console.log(newUser);
 }
 
 
