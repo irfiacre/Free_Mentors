@@ -1,3 +1,5 @@
+import { start } from "repl";
+
 	     //navigation                             
 	
 	const navSlide = () => {
@@ -49,3 +51,4 @@
 	    modal.style.display = "none";
 	  }
 	}
+

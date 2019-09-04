@@ -35,13 +35,6 @@
 	text-align: left;
 
 }
-
-footer{
-    display: block;
-    align-items: center;
-    line-height: 1.6;
-    background-color: var(--primary);
-}
 footer p{
 	text-align: center;
 }
@@ -60,51 +53,7 @@ h4{
     grid-template-columns: 1fr;
 }
 
-  nav {
-    min-height: 70px;
-	display: grid;
-	grid-gap: 190px;
-    grid-template-columns: repeat(2,1fr);
-    background-color: var(--primary);
-    
-  }
-  .nav-links{
-	  margin-top: 40px;
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-  }
 
-  .nav-links a {
-      letter-spacing: 3px;
-  }
-  .nav-links li{
-      list-style: none;
-  }
-
-  
-	.burger div{
-		width: 25px;
-		height: 2px;
-		background-color: var(--light);
-		margin: 5px;
-	}
-	.burger{
-		display: none;
-	}
-
-
-
-#profilepic{
-	  border: 2px solid var(--light);
-	  border-radius: 50%;
-  }
-  
-  #uplogo{
-	  border-radius: 5px;
-	  margin-top: 30px;
-	  margin-left: 3px;
-  }
 
  .mentor {
 
@@ -122,7 +71,15 @@ h4{
 	background-color: white;
 	border-radius: 5px;
     
-
+}
+#av-rate{
+	background-color: var(--primary);
+	padding: 12px;
+	border: 2px solid white;
+	border-radius: 10px;
+	height: 50px;
+	float: right;
+	color: white;
 }
 
 #mentorprofile{
@@ -308,13 +265,15 @@ h4{
 	text-align: left;
 	padding: 5px;
  }
+ .user-review{
+	 line-height: 2;
+	 margin-left: 40px;
+ }
 
  #reviewer_box {
 	font-size:16px;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
-
-	margin-left: 40px; 
     padding: 15px;
  }
 
@@ -324,15 +283,48 @@ h4{
 	border-radius: 5px;
 	background-color: white;
     cursor: pointer;
-    color: black;
-    display: inline;
-    
+	color: black;
+	width: 230px; 
+	margin-top: 10px;
  }
  #reviewbtn:hover{
     padding: 14px;
     background-color: var(--primary);
     color: white;
  }
+.rates{
+	padding: 15px;
+	margin-left: 40px;
+} 
+.ratedStar{
+	color: var(--primary);
+
+}
+
+#review{
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+    cursor: pointer;
+	width: 230px; 
+	margin-top: 10px;
+}
+#review:hover{
+  padding: 2px;
+}
+
+ #result{
+	padding: 12px;
+	border: 2px solid lightgrey;
+	border-radius: 5px;
+	background-color: white;
+    cursor: pointer;
+	color: black;
+	width: 230px; 
+	margin-top: 10px;
+ }
+
+
+
 
  @media(max-width: 800px){
 
@@ -341,28 +333,6 @@ h4{
 		grid-gap: 0px;
 		grid-template-columns: 1fr;
 	}
-
-	.nav-links {
-		position: fixed;
-		right: 0px;
-		height: 20vh;
-		top: 5vh;
-        background-color: var(--primary);
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 30%;
-        height: 30%;
-		transform: translateX(130%);
-		transition: transform 0.5s ease-in;
-	}
-
-	.burger{
-		margin-top: 30px;
-		display: block;
-		cursor: pointer;
-	}
-
 
 	.mentor {
 
@@ -398,10 +368,9 @@ h4{
 	}
 
 	.biography{
-	
 		font-size: 16px;
-		
-	}
+		}
+
 	.biography p {
 		margin: 5px;
 		text-align: justify;
@@ -427,36 +396,8 @@ h4{
 	   text-align: left;
 	   padding: 5px;
 	}
-	
-
-	#reviewbtn{
-		margin-left: 40px;
-		margin-top: 10px;
-    }
-
 
  }
-
- 
-
-.nav-active {
-	transform: translateX(0%);
-}
-
-
-@keyframes navLinkFade {
-	from{
-		opacity: 0;
-		transform: translateX(50px);
-	}
-	to{
-		opacity: 1;
-		transform: translateX(0px);
-	}
-}
-
-
-
 
  @media(max-width:620px){
 	

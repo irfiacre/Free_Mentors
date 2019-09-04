@@ -7,6 +7,9 @@
 	
 	<title>Micheal Jordan</title>
 	<link rel="stylesheet" type="text/css" href="../css/ViewMentor.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+
 </head>
 <body>
 
@@ -39,7 +42,7 @@
 <div class="profile">
 	<img src="../assets/mentor.jpg"  id="mentorprofile">
 	<div class="mentor_info">
-		<h4>Information</h4>
+		<h4>Information <b id="av-rate">5*</b> </h4>
 	<p><b>Name:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Micheal Jordan</p>
 	<p><b>Status:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentor</p>
 	<p><b>Age:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 56years</p>
@@ -102,42 +105,57 @@
  named the first NBA player to become a billionaire, after he increased his stake in the Charlotte Hornets from 80%
  to 89.5% On January 20, 2015, Jordan was honored with the Charlotte Business Journal's Business Person of the Year 
  for 2014. In 2017, he became a part owner of the Miami Marlins of Major League Baseball.
+ 
 </p>
 
+<div class="rates">
+
+</div>
 
 </div><br>
 <div class="reviews" >
 	<h4>REVIEWS ON MICHEAL JORDAN'S SESSIONS</h4>
 	<b><img src="../assets/aline.png" id="reviewer">&nbsp&nbspAline:</b><p class="reviewing">
-		<i>He is amazing</i> 
+		<i>He is amazing </i> 
+		
 	</p>
 	<b><img src="../assets/aline.png" id="reviewer" >&nbsp&nbsp Teta:</b><p class="reviewing">
-		<i>Incredible</i> 
+		<i>Incredible </i>
+		
 	</p>
 	<b><img src="../assets/aline.png" id="reviewer" >&nbsp&nbsp Chalto:</b><p class="reviewing">
-		<i>It was awesome to be with him... </i> 
+		<i>It was awesome to be with him...  </i>
+	
 	</p>
+	<b><img src="../assets/myprofile.png" id="reviewer" >&nbsp&nbsp Irfiacre</b> <br>
+	  
+	<div class="user-review">
+		<input type="text" id="reviewer_box" name="reviewbox" placeholder="how was the session..." ><br>
 
-	<div><b><img src="../assets/myprofile.png" id="reviewer" >&nbsp&nbsp Irfiacre</b>
-	  <p><input type="text" id="reviewer_box" name="reviewbox" placeholder="write your review..." >
-		
-	  <input type="button" id="reviewbtn" name="submittreview" value="Submit Review"></p>
+		<div class="rating">
+			<input type="range" id="review" min="1" max="5" oninput="result.value=review.value"/> <br>
+			<input type="text" id="result" value="5" placeholder="Your rating">
+
+		</div>
+
+	  <input type="button" id="reviewbtn" name="submittreview" value="Submit Review">
+	   <br> <br>
 	  </div>
 	</div>
-</div>
+</div> <br>
 
-<div> <br>
+<div> 
 	<footer>
 		<p>Copyright &copy;2019, irfiacre</p>
 		<p>Email: <a href="mailto:firaduk@yahoo.com">firaduk@yahoo.com</a></p>
-		<p>Telephone: +250786585608 </p> <br>
+		<p>Telephone: +250786585608 </p>
 	</footer>
 </div>
 
 </div>
 
 
-<script  src="../javascript/ViewMentor.js"></script>
+<script  src="../javascript/ViewMentor.js" type="text/javascript"></script>
 
 
 
