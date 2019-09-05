@@ -7,7 +7,7 @@ const reviewing = (req,res)=>{
     if(!sessionCheck){
         return res.status(401).json({
             status:401,
-            error:"session not found"
+            error:"Review  not found"
         })
     }
 

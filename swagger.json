@@ -1,0 +1,642 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "FREE MENTORS",
+      "description": "Free Mentors is a social initiative where accomplished professionals become role models to young people to provide free mentorship session.",
+      "contact": {}
+    },
+    "host": "localhost:5000",
+    "basePath": "/api/v1",
+    "securityDefinitions": {},
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/auth/signup": {
+        "post": {
+          "description": "This makes a post request to signup  a new user and generate a Authorization for the user authentication",
+          "summary": "Sign up",
+          "tags": [
+            "Auth"
+          ],
+          "operationId": "ApiV1AuthSignupPost", 
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+
+            {
+              "name": "firstName",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "lastName",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+              
+            },
+            {
+              "name": "email",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "format": "email"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "format":"password"
+            },
+            {
+              "name": "address",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "bio",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "occupation",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "expertise",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+
+          ],
+          "responses": {
+            "201": {
+              "description": "user successfuly created"
+            },
+           "400": {
+              "description": "parameter not required"
+            },
+            "409": {
+              "description": "Email already exist"
+            }
+          }
+        }              
+      },
+      "/auth/signin": {
+        "post": {
+          "description": "An existing user will sign in, and this will generate authentication Authorization",
+          "summary": "POST API endpoint for user login",
+          "tags": [
+            "Auth"
+          ],
+          "operationId": "Signin",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+          
+            {
+              "name": "email",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "format": "email"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string",
+              "format": "password"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User is successfully logged in"
+            },
+            "404": {
+              "description": "parameter not found"
+            }
+          }
+        }
+      },
+      
+      
+     "/user/{userId}": {
+        "patch": {
+          "description": "Admin changes user to mentor ",
+          "summary": "Change user to mentor",
+          "tags": [
+            "Admin"
+          ],
+          "operationId": "userToMentor",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "type": "string",
+              "required":true
+
+            },
+            {
+                "name": "userId",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "user changed to mentor"
+            },
+            "400": {
+              "description": "User is arleady mentor"
+            },
+            "401": {
+              "description": "Unauthorised: You must login to proceed"
+            },
+            "403": {
+              "description": "Forbidden: Only Admins can perform this operation"
+            }
+          }
+        }
+      },
+
+      "/mentors": {
+        "get": {
+          "description": "Displaying all mentors available on the website",
+          "summary": "All mentors display",
+          "tags": [
+            "mentors"
+          ],
+          "operationId": "mentors",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "all mentors available will be displayed to the user "
+            },
+            "401": {
+              "description": "Unauthorised: Authorization not supplied, You must signin to proceed"
+            }
+            
+          }
+        }
+      },
+
+      "/mentors/{mentorId}": {
+        "get": {
+          "description": "Displaying specific mentor chosen by the user",
+          "summary": "specific mentor",
+          "tags": [
+            "mentors"
+          ],
+          "operationId": "Signin",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            },
+            {
+                "name": "mentorId",
+                "in": "path",
+                "required": true,
+                "type": "integer",
+                "format": "int32",
+                "description": ""
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "Specific mentor, with a specific mentorId will be displayed to the user"
+            },
+            "404": {
+              "description": "Mentor not found"
+            },
+            "401": {
+              "description": "Unauthorised: Authorization not supplied, You must signin to proceed"
+            }
+          }
+        }
+      },
+     
+      "/sessions/": {
+        "post": {
+          "description": "User can create a mentor-ship session with a certain mentor  ",
+          "summary": "Create mentor-ship session",
+          "tags": [
+            "session"
+          ],
+          "operationId": "session",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "mentorId",
+              "in": "header",
+              "required": true,
+              "format":"int32",
+              "type": "number"
+            },
+            {
+              "name": "questions",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            }
+          ],
+
+          "responses": {
+            "200": {
+              "description": "session created successfully with a pending value"
+            },
+            "404": {
+              "description": "mentorId not found"
+            },
+            "401": {
+              "description": "Unauthorised: Authorization not supplied, You must signin to proceed"
+            },
+            "400": {
+              "description": "parameter not is required"
+            }
+           }
+          }
+      },
+
+      "/sessions/{:sessionId}/accept": {
+        "patch": {
+          "description": "A mentor accepts a pending requested session",
+          "summary": "Accept session",
+          "tags": [
+            "session"
+          ],
+          "operationId": "accept",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            },
+            {
+                "name": "sessionId",
+                "in": "path",
+                "required": true,
+                "type": "integer",
+                "format": "int32"
+            }
+
+          ],
+          "responses": {
+            "200": {
+              "description": "session status changes to accepted"
+            },
+            "404": {
+              "description": "session not found"
+            },
+            "401": {
+              "description": "Not authorized, you must sign in"
+            },
+            "400": {
+              "description": "This session is already accepted"
+            }
+          }
+        }
+      },
+      
+      "/sessions/{sessionId}/reject": {
+        "patch": {
+          "description": "A mentor rejects a pending session request",
+          "summary": "Reject session",
+          "tags": [
+            "session"
+          ],
+          "operationId": "rejected",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            },
+            {
+                "name": "sessionId",
+                "in": "path",
+                "required": true,
+                "type": "integer",
+                "format": "int32"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "session status is changed to rejected"
+            },
+            "404": {
+              "description": "session not found"
+            },
+            "401": {
+              "description": "Not authorized, you must sign in"
+            },
+            "400": {
+              "description": "This session is already accepted"
+            }
+           
+          }
+        }
+      },
+
+    "/sessions": {
+        "get": {
+          "description": "A mentor or user can view requested  mentorship sessions ",
+          "summary": "Get all mentor and user's mentorship sessions",
+          "tags": [
+            "session"
+          ],
+          "operationId": "mentorSessions",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "user sessions will be displayed"
+            },
+            "400": {
+              "description": "Bad requests"
+            },
+            "401": {
+              "description": "Unauthorised: You must signin to proceed"
+            }
+          }
+        }
+      },
+
+      "/sessions/{sessionId}/review/": {
+        "post": {
+          "description": "A mentee can  review a mentor on a mentorship session",
+          "summary": "Review a mentor",
+          "tags": [
+            "Session review"
+          ],
+          "operationId": "reviewSession",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required":true,
+              "type": "string"
+            },
+            {
+                "name": "sessionId",
+                "in": "path",
+                "required": true,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "score",
+                "in": "formData",
+                "required": true,
+                "type": "integer",
+                "format": "int32"
+            },
+            {
+                "name": "remark",
+                "in": "formData",
+                "required":true,
+                "type": "string"
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "Reviewed the mentor"
+            },
+            "400": {
+              "description": "Mentor Already Reviewed"
+            },
+            "401": {
+              "description": "Paramenter not found"
+            }
+          }
+        }
+      },
+      
+      "/sessions/{sessionId}/review": {
+        "delete": {
+          "description": "An admin may delete an inappropriate mentorship session review deemed inappropriate.",
+          "summary": "Delete an inappropriate review",
+          "tags": [
+            "Session review"
+          ],
+          "operationId": "hdhdj",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/x-www-form-urlencoded"
+          ],
+          "parameters": [
+            {
+              "name": "Authorization",
+              "in": "header",
+              "required": true,
+              "type": "string"
+            },
+            {
+                "name": "sessionId",
+                "in": "path",
+                "required": true,
+                "type": "integer",
+                "format": "int32"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Review successfully deleted"
+            },
+            "400": {
+              "description": " Review alread deleted"
+            },
+            "401": {
+              "description": "You must sign in to continue"
+            }
+          }
+        }
+      }
+    },
+
+    "definitions": {
+        "signin": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+    
+            },
+            "xml": {
+                "name": "User"
+            }
+        },
+        
+        "signup": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "bio":      {
+                    "type": "string"	
+                },
+                "occupation": {
+                    "type": "string"
+                },
+                "expertise": {
+                    "type": "string"
+                }
+            },
+            "xml": {
+                "name": "User"
+            }
+        },
+        "sessions": {
+            "type": "object",
+            "properties": {
+                "mentorid": {
+                    "type": "integer"
+                },
+                "questions": {
+                    "type": "string"
+                }
+    
+            }
+    
+        }
+    
+    },
+    
+    
+    "tags": [
+      {
+        "name": "All Endpoints",
+        "description": "all endpoints  return objects in JSON format"
+      }
+    ]
+  }
+
+
+  

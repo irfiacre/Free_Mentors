@@ -8,6 +8,6 @@ import reviewDelete from '../controllers/deleteReview'
 const route = express.Router();
 
 route.patch('/api/v1/user/:userId',[Authentication, adminCheck],UserToMentor);
-route.patch('/api/v1/sessions/:sessionId/review',[Authentication, adminCheck],reviewDelete);
+route.delete('/api/v1/sessions/:sessionId/review',[Authentication, adminCheck],reviewDelete);
 
 module.exports = route;
