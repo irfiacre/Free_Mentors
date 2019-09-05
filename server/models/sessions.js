@@ -4,7 +4,7 @@ const sessions = [
        sessionId : 1,
        mentorId : 4,
        menteeId : 3,
-       questions : "hjijhgfdsfguikoiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
+       questions : "hjijhgfdsfguiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
        menteeEmail : "firduk@gma.com",
        status : "accepted"
     },

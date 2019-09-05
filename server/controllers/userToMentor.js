@@ -20,7 +20,7 @@ const changeUserToMentor = async(req,res)=>{
      const objIndex= users.findIndex((obj) => obj.id === parseInt(req.params.userId));
      users[objIndex].is_mentor = true;  
 
-     const newMentor = {
+      const newMentor = {
         id:users.length+1,
         firstName : checking.firstName ,
         lastName : checking.lastName ,

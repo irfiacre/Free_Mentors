@@ -12,8 +12,8 @@ const acceptingSession=(req,res)=>{
     }
 
     if (session.status === 'accepted') {
-        return res.status(401).json({
-          status: 401,
+        return res.status(400).json({
+          status: 400,
           error: 'This session is already accepted',
         });
       }

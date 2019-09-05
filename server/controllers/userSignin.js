@@ -15,7 +15,7 @@ const signin = async(req,res)=>{
             })
     }
     const password = await bcrypt.compare(req.body.password,user.password);
-        if(!password){
+      if(!password){
             return res.status(404).json({
                 status: 404,
                 error: "Password not found"

@@ -51,7 +51,7 @@ describe('test to accept or reject session request', () => {
           .patch('/api/v1/sessions/1/accept')
           .set('Authorization',token)
           .end((err, res) => {
-            expect(res).to.have.status(401);
+            expect(res).to.have.status(400);
           });
         done();
       });

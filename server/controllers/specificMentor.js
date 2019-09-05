@@ -10,7 +10,7 @@ const mentorDisplay = (req,res)=>{
         })
     }
 
-        if(Check.is_mentor){
+    if(Check.is_mentor){
             
             let mentorData ={
                 firstName : Check.firstName ,
