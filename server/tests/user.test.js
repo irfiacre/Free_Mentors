@@ -158,7 +158,6 @@ it('should allow user to view specific mentor',(done)=>{
     });
     done();
 });
-// new test
 it('should not allow user to view specific mentor',(done)=>{
   const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
   

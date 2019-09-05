@@ -42,7 +42,6 @@ const changeUserToMentor = async(req,res)=>{
          message:"User account changed to mentor",
         
      });
-     console.log(users);
      
 
 }

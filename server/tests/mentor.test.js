@@ -10,8 +10,20 @@ chai.use(chaiHttp);
 
 describe('test to accept or reject session request', () => {
 
+  it(' Not a mentor', (done) => {
+    const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJmaXJkdWtAZ21hLmNvbSIsImlzX21lbnRvciI6ZmFsc2UsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNTY2OTk4NDU0fQ.kZDdJ2HQZPfGT4mYhONsPV3Pcs2CGppFKGxeO3_DoRo"
+    chai.request(app)
+
+      .patch('/api/v1/sessions/2/accept')
+      .set('Authorization',token)
+      .end((err, res) => {
+        expect(res).to.have.status(403);
+      });
+    done();
+  });
+
     it('session not found', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
           .patch('/api/v1/sessions/5/accept')
           .set('Authorization',token)
@@ -22,9 +34,9 @@ describe('test to accept or reject session request', () => {
       });
 
     it(' session accepted', (done) => {
-      const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
-      
+      const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY"
       chai.request(app)
+
         .patch('/api/v1/sessions/2/accept')
         .set('Authorization',token)
         .end((err, res) => {
@@ -34,7 +46,7 @@ describe('test to accept or reject session request', () => {
     });
     
       it('already accepted', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
           .patch('/api/v1/sessions/1/accept')
           .set('Authorization',token)
@@ -44,8 +56,10 @@ describe('test to accept or reject session request', () => {
         done();
       });
 
+
+
       it('session not found', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
           .patch('/api/v1/sessions/5/reject')
           .set('Authorization',token)
@@ -56,7 +70,7 @@ describe('test to accept or reject session request', () => {
       });
 
       it('session rejected', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
           .patch('/api/v1/sessions/1/reject')
           .set('Authorization',token)
@@ -67,7 +81,7 @@ describe('test to accept or reject session request', () => {
       });
 
       it('session already rejected', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
           .patch('/api/v1/sessions/1/reject')
           .set('Authorization',token)
@@ -82,9 +96,9 @@ describe('test to accept or reject session request', () => {
 describe('test to view all session requests', () => {
 
     it('all session requests', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
-          .get('/api/v1/Sessionz')
+          .get('/api/v1/sessions')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(200);
@@ -92,5 +106,6 @@ describe('test to view all session requests', () => {
         done();
       });
 
+      
 
 });

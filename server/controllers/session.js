@@ -1,6 +1,6 @@
 import mentors from '../models/users';
 import sessions from '../models/sessions';
-import mentorSessions from '../models/mentorSessions';
+import mentorSessions from '../models/sessions';
 
 
 const Sessions = async(req,res)=>{
