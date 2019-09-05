@@ -9,9 +9,6 @@ const sessionsDisplay = (req,res) =>{
             data: mentorSessions.filter((obj)=> obj.mentorId === mentor.mentorId),
         }) 
     }
-
-   
-
 };
 
 

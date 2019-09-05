@@ -12,7 +12,6 @@ const adminDeleteReview = (req,res)=>{
      }
 
 const reviewIndex = reviews.findIndex((rvobj) => rvobj.sessionId === reviews.sessionId);
-
   reviews.splice(reviewIndex, 1);
   res.status(200).json({
     status: 200,

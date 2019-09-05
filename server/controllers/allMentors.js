@@ -19,16 +19,7 @@ const mentorsDisplay = (req,res) => {
             check.push(mentorData);
         }   
     })
-   
-    
-    //     let mentorArray = [];
-    //     allusers.forEach(mentor => {
-           
-    //         mentorArray.push(mentorData);
-    //     });
-
-        
-    // });
+ 
 return res.status(200).json({
     status: 200,
     data: check,

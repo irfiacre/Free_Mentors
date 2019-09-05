@@ -33,7 +33,7 @@ const signup = async(req,res)=>{
    
     
 
-    users.push(newUser);
+     users.push(newUser);
 
     res.status(201).json({
         status:201,

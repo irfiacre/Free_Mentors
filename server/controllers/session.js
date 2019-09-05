@@ -12,7 +12,7 @@ const Sessions = async(req,res)=>{
         })
     }
 
-    const newSession = {
+     const newSession = {
         sessionId : sessions.length+1,
         mentorId : parseInt(req.body.mentorId),
         menteeId : req.userData.id,
