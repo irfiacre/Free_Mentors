@@ -11,6 +11,14 @@ const Sessions = async(req,res)=>{
             message:"mentor not found"
         })
     }
+    const mentorIdCheck = mentorSessions.find((objS)=>objS.mentorId === parseInt(req.body.mentorId))
+    const menteeIdCheck = mentorSessions.find((meObj)=>meObj.menteeId === parseInt(req.userData.id))
+    if(mentorIdCheck && menteeIdCheck){
+            return res.status(400).json({
+                status: 400,
+                error: "session already created"
+                })
+    }
 
     const newSession = {
         sessionId : sessions.length+1,
