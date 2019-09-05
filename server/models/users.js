@@ -19,7 +19,7 @@ const users=[
         firstName: 'Uwase',
         lastName: 'Chalto',
         email: 'chalto@gmail.com',
-        password: 'black0z',
+        password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
         address: 'Kabeza',
         bio: 'I am a fashion designer',
         occupation: 'fashion',
@@ -27,6 +27,34 @@ const users=[
         is_admin: false,
         is_mentor: false,
       },
+
+      {
+        id: 3,
+        firstName: 'Micheal',
+        lastName: 'Jordan',
+        email: 'mento1@freementors.com',
+        password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
+        address: 'USA',
+        bio: 'I am a professional basketball player',
+        occupation: 'Business Marketing',
+        expertise: 'basketball player',
+        is_admin: false,
+        is_mentor: true
+      },
+
+      {
+        id: 4,
+        firstName: 'Opral ',
+        lastName: 'winifrey',
+        email: 'mento5@freementors.com',
+        password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
+        address: 'USA',
+        bio: 'I am in the entertainment industry',
+        occupation: 'Actress, Tv host,...',
+        expertise: 'actress',
+        is_admin: false,
+        is_mentor: true
+      }
 
 ];
 

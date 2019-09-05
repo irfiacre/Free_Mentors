@@ -1,5 +1,5 @@
 import sessions from'../models/sessions';
-import  mentorSession from '../models/mentorSessions'
+import  mentorSession from '../models/sessions'
 
 const rejectingSession=(req,res)=>{
   const session=sessions.find((objectof)=>objectof.sessionId === parseInt(req.params.sessionId));

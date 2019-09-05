@@ -12,7 +12,6 @@ import userSessions  from'../controllers/allUSERsessions';
 import userReview  from'../controllers/review';
 import reviewValidater  from'../middleware/reviewValidater';
 
-
 const route = express.Router();
 
 

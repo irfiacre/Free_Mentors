@@ -1,10 +1,8 @@
 import  bcrypt from 'bcrypt';
 import  users from '../models/users';
-import  mentors from '../models/mentors';
-
 
 const changeUserToMentor = async(req,res)=>{
-    const checking   = users.find((objectof) => objectof.id === parseInt(req.params.userId));
+    const checking = users.find((objectof) => objectof.id === parseInt(req.params.userId));
      if(!checking){
          return res.status(404).json({
              status:404,
@@ -23,7 +21,7 @@ const changeUserToMentor = async(req,res)=>{
      users[objIndex].is_mentor = true;  
 
      const newMentor = {
-        id:mentors.length+1,
+        id:users.length+1,
         firstName : checking.firstName ,
         lastName : checking.lastName ,
         email :  checking.email,
@@ -38,12 +36,13 @@ const changeUserToMentor = async(req,res)=>{
      }
      
 
-     mentors.push(newMentor);
+     users.push(newMentor);
      res.status(200).json({
          status:200,
          message:"User account changed to mentor",
         
      });
+     
 
 }
 
