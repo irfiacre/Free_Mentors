@@ -122,6 +122,8 @@ it('should validate the user', (done) => {
     .post('/api/v1/auth/signin')
     .send(newUser)
     .end((err, res) => {
+      console.log(res.body);
+      
       expect(res.statusCode).to.equal(404);
       expect(res).to.have.status(404);
     });
@@ -150,7 +152,7 @@ it('should allow user to view specific mentor',(done)=>{
   const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
   
   chai.request(app)
-    .get('/api/v1/mentors/3')
+    .get('/api/v1/mentors/1')
     .set('Authorization',token)
     .end((err,res)=> {
 
@@ -158,6 +160,8 @@ it('should allow user to view specific mentor',(done)=>{
     });
     done();
 });
+
+
 it('should not allow user to view specific mentor',(done)=>{
   const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
   
@@ -167,25 +171,10 @@ it('should not allow user to view specific mentor',(done)=>{
     .end((err,res)=> {
 
       expect(res).to.have.status(401);
-    });
-    done();
-});
-
-
-it('This is not a mentor',(done)=>{
-  const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
-  
-  chai.request(app)
-    .get('/api/v1/mentors/1')                                                                    
-    .set('Authorization',token)
-    .end((err,res)=> {
-
-      expect(res).to.have.status(400);
   
     });
     done();
 });
-
 
 });
 

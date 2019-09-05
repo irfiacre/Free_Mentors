@@ -1,21 +1,21 @@
-const sessions = [
+const Mentorsessions = [
 
     {
        sessionId : 1,
        mentorId : 1,
        menteeId : 3,
        questions : "hjijhgfdsfguikoiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
-       menteeEmail : "firduk@gma.com",
-       status : "accepted"
+       menteeEmail : "firduk@gmail.com",
+       status : "pending"
     },
 
     {
         sessionId : 2,
-        mentorId : 2,
-        menteeId : 3,
+        mentorId : 1,
+        menteeId : 2,
         questions : "hjijhgfdsfguikoiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
-        menteeEmail : "firduk@gma.com",
-        status : "rejected"
+        menteeEmail : "black0z@gmail.com",
+        status : "pending"
      }
  
 
@@ -23,4 +23,4 @@ const sessions = [
 
 ];
 
-module.exports = sessions;
+module.exports = Mentorsessions;
