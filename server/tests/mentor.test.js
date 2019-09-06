@@ -44,6 +44,17 @@ describe('test to accept or reject session request', () => {
         });
       done();
     });
+    it(' session  not yours', (done) => {
+      const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY"
+      chai.request(app)
+
+        .patch('/api/v1/sessions/3/accept')
+        .set('Authorization',token)
+        .end((err, res) => {
+          expect(res).to.have.status(403);
+        });
+      done();
+    });
     
       it('already accepted', (done) => {
         const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
@@ -72,10 +83,21 @@ describe('test to accept or reject session request', () => {
       it('session rejected', (done) => {
         const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
-          .patch('/api/v1/sessions/1/reject')
+          .patch('/api/v1/sessions/2/reject')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(200);
+          });
+        done();
+      });
+      it(' session  not yours', (done) => {
+        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY"
+        chai.request(app)
+  
+          .patch('/api/v1/sessions/3/accept')
+          .set('Authorization',token)
+          .end((err, res) => {
+            expect(res).to.have.status(403);
           });
         done();
       });
@@ -83,7 +105,7 @@ describe('test to accept or reject session request', () => {
       it('session already rejected', (done) => {
         const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJjaGFsdG9AZ21haWwuY29tIiwiaXNfYWRtaW4iOmZhbHNlLCJpc19tZW50b3IiOnRydWUsImlhdCI6MTU2NzYzMTYzNX0.anR526NQxBzr9MQNVzk2BH8oVYchM8lbdknNivnxLYY" ;
         chai.request(app)
-          .patch('/api/v1/sessions/1/reject')
+          .patch('/api/v1/sessions/2/reject')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(401);
