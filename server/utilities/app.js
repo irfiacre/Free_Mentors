@@ -15,5 +15,12 @@ app.use('/',mentor);
 app.use('/',admin);
 app.use('/doc',swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
+app.use(function(req,res,next){
+    return res.status(400).json({
+        status:400,
+        error:"BAD REQUEST"
+        
+    })
+})
 
 module.exports = app;
