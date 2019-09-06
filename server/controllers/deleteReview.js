@@ -5,8 +5,8 @@ const adminDeleteReview = (req,res)=>{
     const checking1 = sessions.find((objectof) => objectof.sessionId === parseInt(req.params.sessionId));
 
     if(!checking1){
-         return res.status(401).json({
-             status:401,
+         return res.status(404).json({
+             status:404,
              message:"session  is not found"
          })
      }

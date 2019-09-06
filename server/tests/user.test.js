@@ -276,6 +276,41 @@ it('questions is required',(done)=>{
     });
     done();
 });
+it('should not allow user to create a mentorship request',(done)=>{
+  const session ={
+    mentorId: 3,
+    menteeId: 2,
+    questions:"jdjdjdjdjdjd"
+  }
+  const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
+  
+  chai.request(app)
+    .post('/api/v1/sessions')
+    .set('Authorization', token)
+    .send(session)
+    .end((err,res)=> {
+      
+       expect(res).to.have.status(400);
+    });
+    done();
+});
+it('session already created',(done)=>{
+  const session ={
+    mentorId: 4,
+    questions:"jdjdjdjdjdjd"
+  }
+  const token ="eyJhbGciiJIUI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw"
+  
+  chai.request(app)
+    .post('/api/v1/sessions')
+    .set('Authorization', token)
+    .send(session)
+    .end((err,res)=> {
+      
+       expect(res).to.have.status(401);
+    });
+    done();
+});
 
 });
 
