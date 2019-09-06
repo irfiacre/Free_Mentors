@@ -6,7 +6,7 @@
       "description": "Free Mentors is a social initiative where accomplished professionals become role models to young people to provide free mentorship session.",
       "contact": {}
     },
-    "host": "localhost:5000",
+    "host": "https://free-mentor-s.herokuapp.com",
     "basePath": "/api/v1",
     "securityDefinitions": {},
     "schemes": [
