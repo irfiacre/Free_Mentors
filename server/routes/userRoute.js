@@ -8,7 +8,7 @@ import allMentors from '../controllers/allMentors';
 import specificMentor from '../controllers/specificMentor';
 import sessionValidator  from'../middleware/sessionValidator';
 import session  from'../controllers/session';
-import userSessions  from'../controllers/allUSERsessions';
+import userSessions  from'../controllers/allsessions';
 import userReview  from'../controllers/review';
 import reviewValidater  from'../middleware/reviewValidater';
 

@@ -20,16 +20,16 @@ const sessions = [
 
      {
       sessionId : 3,
-      mentorId : 4,
+      mentorId : 2,
       menteeId : 3,
       questions : "hjijhgfdsfguikoiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
       menteeEmail : "firduk@gmail.com",
-      status : "pending"
+      status : "accepted"
    },
 
    {
        sessionId : 4,
-       mentorId : 3,
+       mentorId : 4,
        menteeId : 2,
        questions : "hjijhgfdsfguikoiuy7t6rfgvhjhiuyghsbuisauisususuusususususususuususususuu ",
        menteeEmail : "black0z@gmail.com",

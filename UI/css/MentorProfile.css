@@ -221,30 +221,8 @@ tr td {
 
 } 
 
- 
-
-.nav-active {
-  transform: translateX(0%);
-}
-
-@keyframes navLinkFade {
-  from{
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to{
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-
-
 @media(max-width: 470px){
-	
-	.nav-links{
-		margin-top: -10px;
-	}
+
 	.mentor_all{
 		margin: 3px;
 		display: grid;
