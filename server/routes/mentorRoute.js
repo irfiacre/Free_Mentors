@@ -1,11 +1,15 @@
 
 import  express from 'express';
 import  Authentication from '../middleware/Authentication';
-import  accept from "../controllers/accept";
-import  reject from "../controllers/reject";
+import { accept,reject } from "../controllers/Accept-Reject";
+// import  reject from "../controllers/reject";
 import mentorCheck from '../middleware/mentorCheck';
-const route = express.Router();
-route.patch('/api/v1/sessions/:sessionId/accept',[Authentication,mentorCheck],accept);
-route.patch('/api/v1/sessions/:sessionId/reject',[Authentication,mentorCheck],reject);
+import sessionValidate from '../middleware/sessionValidate'
 
-module.exports = route;
+
+const route = express.Router();
+
+route.patch('/api/v1/sessions/:sessionId/accept',[Authentication,mentorCheck,sessionValidate],accept);
+route.patch('/api/v1/sessions/:sessionId/reject',[Authentication,mentorCheck,sessionValidate],reject);
+
+export default route;
