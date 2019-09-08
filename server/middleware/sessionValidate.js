@@ -6,8 +6,8 @@ const validationAccept = (req,res,next)=>{
    
     const sessionAccept=mentorSession.find((objectof)=>objectof.sessionId === parseInt(req.params.sessionId));
     if(!sessionAccept){
-       return res.status(401).json({
-            status:401,
+       return res.status(404).json({
+            status:404,
             error:"session not found"
         })
     }
@@ -30,8 +30,6 @@ const validationAccept = (req,res,next)=>{
 next()
 }
 
-module.exports = validationAccept;
-
 
 
 const validationReject = (req,res,next)=>{
@@ -39,15 +37,15 @@ const validationReject = (req,res,next)=>{
     const sessionReject=mentorSession.find((objectof)=>objectof.sessionId === parseInt(req.params.sessionId));
     
   if(!sessionReject){
-    return res.status(401).json({
-        status:401,
+    return res.status(404).json({
+        status:404,
         error:"session not found"
     })
 }
 
   if (sessionReject.status === 'rejected') {
-    return res.status(401).json({
-      status: 401,
+    return res.status(400).json({
+      status: 400,
       error: 'This session is already rejected',
     });
  }
@@ -64,4 +62,4 @@ next()
 
 }
 
-module.exports=validationReject;
+export {validationAccept,validationReject};

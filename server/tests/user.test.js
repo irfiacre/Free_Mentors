@@ -9,6 +9,22 @@ import app from '../utilities/app';
 chai.should();
 chai.use(chaiHttp);
 
+
+describe('test for incorrect URL', () => {
+
+  it('should show BAD REQUEST', (done) => {
+    const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
+    chai.request(app)
+      .get('/api/v1/ment')
+      .set('Authorization',token)
+      .end((err, res) => {
+        expect(res).to.have.status(400);
+      });
+    done();
+  });
+
+})
+
 before('should return email already exist', (done) => {
   const newUser = {
     email: 'firaduk@gmail.com',
@@ -386,4 +402,6 @@ describe('test the review sessions', () => {
       });  
 
 });
+
+
 
