@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const users= require('../models/users');
+import pool from 'pg';
 
 const signup = async(req,res)=>{
     const user = users.find(objectof=>objectof.email === req.body.email);
@@ -11,7 +12,7 @@ const signup = async(req,res)=>{
         })
     }
     const newUser={
-        id:users.length+1,
+        // id:users.length+1,
         firstName : req.body.firstName ,
         lastName : req.body.lastName ,
         email :  req.body.email,
@@ -32,8 +33,11 @@ const signup = async(req,res)=>{
     },'jwtprivatekey');
    
     
+    
+    const insert = 'INSERT INTO users(id,first_name, last_name,email, password,address,bio,occupation,expertise,is_mentor,is_admin) VALUES($1, $2, $3, $4, $5,$6,$7,$8,$9,$10,$11) RETURNING *';
+    const { rows } = await pool.query(insert,
+        [newUser.first_name, newUser.last_name,newUser.email, newUser.password,newUser.address,newUser.bio,newUser.occupation,newUser.expertise, newUser.is_mentor,newUser.is_admin]);
 
-     users.push(newUser);
 
     res.status(201).json({
         status:201,
