@@ -1,22 +1,27 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const users= require('../models/users');
-import pool from 'pg';
+import bcrypt  from 'bcrypt';
+import jwt  from 'jsonwebtoken';
+import pool from '../configurations/db-config';
 
 const signup = async(req,res)=>{
-    const user = users.find(objectof=>objectof.email === req.body.email);
-    if(user){
+try{ 
+    const emailData = 'SELECT * FROM users WHERE email =$1';
+    const {rows: [emailFound]} = await pool.query(emailData, [req.body.email] );
+
+    console.log(emailFound);
+    
+    
+    if(emailFound){
         return res.status(409).json({
-            status:409,
+         status:409,
             error:"Email already exist"
         })
     }
+
     const newUser={
-        // id:users.length+1,
         firstName : req.body.firstName ,
         lastName : req.body.lastName ,
         email :  req.body.email,
-        password :  await bcrypt.hash(req.body.password,10),
+        password : await bcrypt.hash(req.body.password,10),
         address :  req.body.address,
         bio :  req.body.bio,
         occupation :  req.body.occupation,
@@ -26,6 +31,8 @@ const signup = async(req,res)=>{
 
     }
     
+    console.log(newUser);
+    
 
     const token = jwt.sign({
         id: newUser.id,
@@ -33,11 +40,9 @@ const signup = async(req,res)=>{
     },'jwtprivatekey');
    
     
-    
-    const insert = 'INSERT INTO users(id,first_name, last_name,email, password,address,bio,occupation,expertise,is_mentor,is_admin) VALUES($1, $2, $3, $4, $5,$6,$7,$8,$9,$10,$11) RETURNING *';
+    const insert = 'INSERT INTO users(firstname, lastname, email, password, address, bio, occupation, expertise) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
     const { rows } = await pool.query(insert,
-        [newUser.first_name, newUser.last_name,newUser.email, newUser.password,newUser.address,newUser.bio,newUser.occupation,newUser.expertise, newUser.is_mentor,newUser.is_admin]);
-
+      [newUser.firstName, newUser.lastName, newUser.email, newUser.password, newUser.address, newUser.bio, newUser.occupation, newUser.expertise]);
 
     res.status(201).json({
         status:201,
@@ -48,6 +53,15 @@ const signup = async(req,res)=>{
             
         }    
     })
+    
+}catch(error){
+    return res.status(500).json({
+        status: 500,
+        error: error.message
+    })
+   
+}
+// console.log(error);
 }
 
 

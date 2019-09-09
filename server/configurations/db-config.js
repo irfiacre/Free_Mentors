@@ -7,15 +7,13 @@ dotenv.config();
 
 let pool;
 if (process.env.NODE_ENV === 'development') {
-
+  console.log("connected to the database");
+  
   pool = new Pool({
     connectionString: process.env.DEVELOPMENT_URL,
   });
 
 
-//   pool.connect((error, client) => {
-      
-//   });
 
 } else if (process.env.NODE_ENV === 'testing') {
   pool = new Pool({
@@ -28,7 +26,6 @@ if (process.env.NODE_ENV === 'development') {
   
 
 } else if (process.env.NODE_ENV === 'production') {
-    console.log("SGHSJHGCVHJKJHC");
   pool = new Pool({
     connectionString: process.env.PRODUCTION_URL,
   });
