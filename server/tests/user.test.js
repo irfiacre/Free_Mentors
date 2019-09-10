@@ -62,7 +62,7 @@ describe('test the user sign up', () => {
       .post('/api/v1/auth/signup')
       .send(newUser)
       .end((err, res) => {
-        expect(res.statusCode).to.equal(201);
+        // expect(res.statusCode).to.equal(201);
         expect(res).to.have.status(201);
       });
     done();
