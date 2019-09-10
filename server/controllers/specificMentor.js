@@ -2,7 +2,7 @@ import pool from "../configurations/db-config";
 
 class specificMentor{
 
- async mentorDisplay (req,res) {
+ async MentorDisplay (req,res) {
   
     try{ 
 
