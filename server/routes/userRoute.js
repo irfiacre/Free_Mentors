@@ -1,6 +1,6 @@
 import express  from'express';
 import signinValidater  from'../middleware/signin';
-import signin  from'../controllers/userSignin';
+import signIn  from'../controllers/userSignin';
 import signupValidater  from'../middleware/signup'; 
 import signup  from'../controllers/userSignup';
 import Authorisation  from'../middleware/Authentication';
@@ -14,8 +14,8 @@ import reviewValidater  from'../middleware/reviewValidater';
 
 const route = express.Router();
 
-route.post('/api/v1/auth/signin',signinValidater,signin);
-route.post('/api/v1/auth/signup',signupValidater,signup);
+route.post('/api/v1/auth/signin',signinValidater,signIn.signin);
+route.post('/api/v1/auth/signup',signupValidater,signup.signup);
 route.get('/api/v1/mentors',Authorisation,allMentors);
 route.get('/api/v1/mentors/:mentorId',Authorisation,specificMentor);
 route.post('/api/v1/sessions', [Authorisation,sessionValidator],session);
