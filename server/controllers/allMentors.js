@@ -4,12 +4,13 @@ import pool from '../configurations/db-config';
 class mentors {
   async mentorsDisplay(req, res) {
     try {
-      const mentors = 'SELECT * FROM USERS';
+      const mentors = `SELECT * FROM USERS WHERE is_mentor ='true'`;
+      
       const { rows } = await pool.query(mentors);
-
+        
       const check = [];
       rows.forEach((mentor) => {
-        if (mentor.is_mentor === true) {
+        if (mentor) {
           const mentorData = {
             firstName: mentor.firstName,
             lastName: mentor.lastName,
