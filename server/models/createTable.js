@@ -1,11 +1,5 @@
 import pool from '../configurations/db-config';
 
-
-
-console.log(process.env.NODE_ENV);
-console.log(process.env.DEVELOPMENT_URL);
-
-
 const createTables = `
     CREATE TABLE IF NOT EXISTS users(
     id SERIAL PRIMARY KEY,
