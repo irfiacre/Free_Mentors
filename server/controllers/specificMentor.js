@@ -1,14 +1,31 @@
-import mentors from '../models/users';
+import pool from "../configurations/db-config";
 
-const mentorDisplay = (req,res)=>{
-    const Check = mentors.find((objectof) => objectof.id === parseInt(req.params.mentorId));
+class specificMentor{
+
+ async mentorDisplay (req,res) {
+  
+    try{ 
+    const mentors ='SELECT * FROM USERS'
+        const {rows} = await pool.query(mentors)
+
+    const Check = rows.find((objectof) => objectof.id === parseInt(req.params.mentorId));
+
+   
 
     if(!Check){
-        return res.status(401).json({
-            status:401,
+        return res.status(404).json({
+            status:404,
             message: "Mentor not found"
         })
     }
+    
+    if(isNaN(Check)){
+        return res.status(400).json({
+            status: 400,
+            error: "The Mentor id must be an integer"
+        })
+    }
+
 
     if(Check.is_mentor){
             
@@ -32,9 +49,16 @@ const mentorDisplay = (req,res)=>{
                       status: 400,
                       error: 'This is not a mentor'
                      })
-              } 
+              }
+
+    }catch(error){
+     return res.status(500).json({
+         status: 500,
+         error: error.message
+                })
+               
+            } 
         }
-         
-
-
-module.exports=  mentorDisplay;
+    }      
+        
+export default new specificMentor();
