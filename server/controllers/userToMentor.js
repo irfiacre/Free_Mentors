@@ -21,9 +21,9 @@ const changeUserToMentor = async(req,res)=>{
      }
     
      if(checking.is_mentor === true){
-         return res.status(422).json({
-             status: 422,
-             message:"User is arleady mentor"
+         return res.status(208).json({
+             status: 208,
+             message:"User is already mentor"
          })
         }
      const newInfo= `UPDATE users SET is_mentor=true WHERE id = ${req.params.userId} `
