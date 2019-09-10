@@ -5,26 +5,27 @@ class specificMentor{
  async mentorDisplay (req,res) {
   
     try{ 
-    const mentors ='SELECT * FROM USERS'
-        const {rows} = await pool.query(mentors)
 
+        if(isNaN(req.params.mentorId)){
+            return res.status(400).json({
+                status: 400,
+                error: "The Mentor id must be an integer"
+            })
+        }
+
+    const mentors =`SELECT * FROM USERS WHERE is_mentor ='true'`;
+        const {rows} = await pool.query(mentors)
+  
     const Check = rows.find((objectof) => objectof.id === parseInt(req.params.mentorId));
 
-   
-
-    if(!Check){
+        if(!Check){
         return res.status(404).json({
             status:404,
             message: "Mentor not found"
         })
     }
     
-    if(isNaN(Check)){
-        return res.status(400).json({
-            status: 400,
-            error: "The Mentor id must be an integer"
-        })
-    }
+   
 
 
     if(Check.is_mentor){
