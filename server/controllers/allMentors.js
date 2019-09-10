@@ -2,7 +2,7 @@
 import pool from '../configurations/db-config';
 
 class mentors {
-  async mentorsDisplay(req, res) {
+  async MentorsDisplay(req, res) {
     try {
       const mentors = `SELECT * FROM USERS WHERE is_mentor ='true'`;
       
