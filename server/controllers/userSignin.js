@@ -2,20 +2,20 @@ import bcrypt  from 'bcrypt';
 import '@babel/plugin-transform-regenerator';
 import '@babel/polyfill';
 import jwt  from 'jsonwebtoken';
-// import users from '../models/users';
 import pool from '../configurations/db-config';
 
+class signingIn{
 
-const signin = async(req,res)=>{
+    async signin (req,res){
     try{
       
     const emailGet = 'SELECT email FROM users WHERE email = $1;';
     const {rows: [emailGot]} = await pool.query(emailGet,[req.body.email]);
     
     if(!emailGot){
-        return res.status(409).json({
-         status:409,
-            error:"Email Does not exist"
+        return res.status(422).json({
+         status:422,
+            error:"Invalid email"
         })
     }
 
@@ -24,9 +24,9 @@ const signin = async(req,res)=>{
 
     const password = await bcrypt.compare(req.body.password, passwordGot.password);
       if(!password){
-            return res.status(404).json({
-                status: 404,
-                error: "Password not found"
+            return res.status(422).json({
+                status: 422,
+                error: "Invalid Password"
             })
         }
         
@@ -48,10 +48,10 @@ const signin = async(req,res)=>{
     return res.status(500).json({
         status: 500,
         error: error.message
-    })
-   
+    }) 
 }
 
 }
+}
 
-export default signin;
+export default new signingIn();

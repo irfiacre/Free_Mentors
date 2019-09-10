@@ -2,7 +2,9 @@ import bcrypt  from 'bcrypt';
 import jwt  from 'jsonwebtoken';
 import pool from '../configurations/db-config';
 
-const signup = async(req,res)=>{
+
+class signingUp{
+    async signup(req,res){
 try{ 
     const emailData = 'SELECT * FROM users WHERE email =$1';
     const {rows: [emailFound]} = await pool.query(emailData, [req.body.email] );
@@ -48,10 +50,18 @@ try{
         message:"user successfuly created",
         data:{
             token,
-            message:"user successfuly created"
+            
+                firstName : req.body.firstName ,
+                lastName : req.body.lastName ,
+                email :  req.body.email,
+                address :  req.body.address,
+                bio :  req.body.bio,
+                occupation :  req.body.occupation,
+                expertise :  req.body.expertise,
+            }
             
         }    
-    })
+    )
     
 }catch(error){
     return res.status(500).json({
@@ -61,9 +71,10 @@ try{
    
 }
 }
+}
 
 
-module.exports = signup;
+export default new signingUp();
 
 
 
