@@ -7,7 +7,6 @@ try{
     const emailData = 'SELECT * FROM users WHERE email =$1';
     const {rows: [emailFound]} = await pool.query(emailData, [req.body.email] );
 
-    console.log(emailFound);
     
     
     if(emailFound){
@@ -30,19 +29,19 @@ try{
         is_admin: req.body.is_admin || false
 
     }
-    
-    console.log(newUser);
-    
 
-    const token = jwt.sign({
-        id: newUser.id,
-        email : newUser.email,  
-    },'jwtprivatekey');
-   
-    
     const insert = 'INSERT INTO users(firstname, lastname, email, password, address, bio, occupation, expertise) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
     const { rows } = await pool.query(insert,
       [newUser.firstName, newUser.lastName, newUser.email, newUser.password, newUser.address, newUser.bio, newUser.occupation, newUser.expertise]);
+
+      
+      const user = rows.find((obj)=>obj.id) 
+
+      const token = jwt.sign({
+        id: user.id,
+        email : user.email, 
+
+    },'jwtprivatekey');
 
     res.status(201).json({
         status:201,
@@ -61,7 +60,6 @@ try{
     })
    
 }
-// console.log(error);
 }
 
 

@@ -16,7 +16,9 @@ const createTables = `
     address VARCHAR(300) NOT NULL  , 
     bio VARCHAR(300) NOT NULL , 
     occupation VARCHAR(300) NOT NULL , 
-    expertise VARCHAR(300) NOT NULL 
+    expertise VARCHAR(300) NOT NULL,
+    is_mentor BOOLEAN NOT NULL DEFAULT FALSE,
+    is_admin BOOLEAN NOT NULL DEFAULT FALSE
     );`;
     
     const tableCreate = async()=>{
