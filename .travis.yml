@@ -1,10 +1,15 @@
 language: node_js
 node_js:
-  - stable
+  - "10"
+
+cache:
+  directories:
+    - "node_modules"
 service:
   - postgresql  
   
 before_script:
+  - npm install
   - psql -c "create database free_mentors;" -U postgres
 script:
   - npm run create-tables
