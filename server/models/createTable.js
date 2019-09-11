@@ -27,7 +27,20 @@ const createTables = `
         menteeEmail VARCHAR(30) UNIQUE NOT NULL,
         status VARCHAR(10) NOT NULL
     );
-  `;
+
+    INSERT INTO users(
+      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'true','true');
+  
+    INSERT INTO users(
+      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('RASTA','Never','fi@mail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
+  
+    INSERT INTO users(
+      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('BOOGY','Green','raduk@gmil.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
+  
+    `;
 
 
 const tableCreate = async () => {

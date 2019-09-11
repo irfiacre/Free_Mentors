@@ -3,8 +3,6 @@ import { describe, it } from 'mocha';
 import chaiHttp from 'chai-http';
 import app from '../utilities/app';
 
-
-
 chai.should();
 chai.use(chaiHttp);
 
@@ -26,7 +24,7 @@ describe('test the user to mentor', () => {
 it('should change user to mentor', (done) => {
   const token = process.env.ADMIN_TOKEN;
   chai.request(app)
-          .patch('/api/v1/user/16')
+          .patch('/api/v1/user/2')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(200);
@@ -40,7 +38,7 @@ it('should not change user to mentor', (done) => {
         const token = process.env.ADMIN_TOKEN;
 
           chai.request(app)
-          .patch('/api/v1/user/2')
+          .patch('/api/v1/user/1')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(208);
@@ -48,13 +46,13 @@ it('should not change user to mentor', (done) => {
         done();
       });  
       
-it('should not change user to mentor', (done) => {
-  const token = process.env.ADMIN_TOKEN;
+it('should not change user to mentor, Not in an admin ', (done) => {
+  const token = process.env.USER_TOKEN;
        chai.request(app)
           .patch('/api/v1/user/2')
           .set('Authorization',token)
           .end((err, res) => {
-            expect(res).to.have.status(208);
+            expect(res).to.have.status(403);
           });
         done();
       }); 
@@ -84,7 +82,7 @@ it(' userId must be an integer ', (done) => {
 
       it('YOU must sign in ', (done) => {
            chai.request(app)
-          .patch('/api/v1/user/16')
+          .patch('/api/v1/user/2')
           .end((err, res) => {
             expect(res).to.have.status(401);
           });

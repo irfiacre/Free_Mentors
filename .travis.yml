@@ -4,16 +4,19 @@ node_js:
 
 cache:
   directories:
-    - "node_modules"
+    - node_modules
 services:
-  - postgresql  
+  - postgresql 
+addons:
+  postgresql: "9.6" 
+
+install:
+  -npm install  
 
 before_script:
   - psql -c "create database free_mentors;" -U postgres
 script:
-  - npm run create-tables
   - npm test
   
 after_success:
-  - npm run create-tables
   - npm run coveralls

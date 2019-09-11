@@ -7,18 +7,20 @@ const testInfo=[
 
     {
         email: 'firaduk@gmail.com',
-        password: 'ibirayi123',
+        password: 'ibirayi123'
     },
     {
         email: 'firaduk@yahoo.com',
-        password: 'ibirayi123',
+        password: 'ibirayi123'
     },
-
-
+    {
+      email: 'firaduk@gmail.com',
+      password: '$2b$10$SYav8yti5OPieBZ.2bp7Ou/clh.0Y89jEfpmS6vx.VE3bikzRrEJW',
+    },
     {
         firstName: 'IRANZI',
         lastName: 'Fiacre',
-        email: 'firaduk@gmail.com',
+        email: 'firauk@gmail.com',
         password: '$2b$10$SYav8yti5OPieBZ.2bp7Ou/clh.0Y89jEfpmS6vx.VE3bikzRrEJW',
         address: 'Kigali',
         bio: 'I am a software engineer',

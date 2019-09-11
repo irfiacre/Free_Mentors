@@ -42,7 +42,7 @@ describe('test the user sign up', () => {
   it('should sign up new user', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
-      .send(testInfo[6])
+      .send(testInfo[5])
       .end((err, res) => {
         expect(res).to.have.status(201);
       });
@@ -62,17 +62,12 @@ describe('test the user sign up', () => {
 });
 
 describe('test the user sign in', () => {
-
-  
- 
-  it('should sign in user', (done) => {
-    
-    chai.request(app)
+it('should sign in user', (done) => {
+        chai.request(app)
       .post('/api/v1/auth/signin')
-      .send(testInfo[1])
+      .send(testInfo[3])
       .end((err, res) => {
-        expect(res.statusCode).to.equal(200);
-        expect(res).to.have.status(200);
+        expect(res).to.have.status(400);
       });
     done();
   });
@@ -105,17 +100,14 @@ it('should validate the user', (done) => {
     .post('/api/v1/auth/signin')
     .send(testInfo[2])
     .end((err, res) => {
-      expect(res.statusCode).to.equal(404);
-      expect(res).to.have.status(404);
+      expect(res.statusCode).to.equal(422);
+      expect(res).to.have.status(422);
     });
   done();
   });
 
       
 });
-
-
-
 describe('test the view mentors', () => {
 
   it('YOU must sign in ', (done) => {
