@@ -7,9 +7,8 @@ cache:
     - "node_modules"
 service:
   - postgresql  
-  
+
 before_script:
-  - npm install
   - psql -c "create database free_mentors;" -U postgres
 script:
   - npm run create-tables
