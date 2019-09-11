@@ -1,5 +1,5 @@
-import pool from '../configurations/db-config';
 
+import pool from "../configurations/db-config"
 
 const inserter = `
   INSERT INTO users(

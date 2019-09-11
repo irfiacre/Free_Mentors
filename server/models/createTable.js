@@ -1,17 +1,5 @@
 
-import { Pool } from 'pg';
-import dotenv from 'dotenv';
-
-
-dotenv.config();
-
-
-const connectionString = process.env.DATABASE_URL;
-
-const pool = new Pool({
-  connectionString,
-});
-
+import pool from "../configurations/db-config"
 
 const createTables = `
     DROP TABLE IF EXISTS users CASCADE;
@@ -52,3 +40,5 @@ const tableCreate = async () => {
 };
 
 tableCreate();
+
+// export {pool}
