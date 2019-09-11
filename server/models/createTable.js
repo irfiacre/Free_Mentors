@@ -1,5 +1,16 @@
 
-import pool from '../configurations/db-config';
+import { Pool } from 'pg';
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+
+
+const connectionString = process.env.DATABASE_URL;
+
+const pool = new Pool({
+  connectionString,
+});
 
 
 const createTables = `
@@ -41,4 +52,3 @@ const tableCreate = async () => {
 };
 
 tableCreate();
-

@@ -1,6 +1,7 @@
 import bcrypt  from 'bcrypt';
-import jwt  from 'jsonwebtoken';
-import pool from '../configurations/db-config';
+import jwt  from 'jsonwebtoken';import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 class signingUp{
