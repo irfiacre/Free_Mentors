@@ -8,12 +8,25 @@ import app from '../utilities/app';
 chai.should();
 chai.use(chaiHttp);
 
+describe('Incorrect URL', () => {
+it('should change user to mentor', (done) => {
+  const token = process.env.ADMIN_TOKEN;
+  chai.request(app)
+    .patch('/api/v1/use')
+    .set('Authorization',token)
+    .end((err, res) => {
+      expect(res).to.have.status(400);
+    });
+  done();
+});
+})
+
 describe('test the user to mentor', () => {
 
 it('should change user to mentor', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
-        chai.request(app)
-          .patch('/api/v1/user/2')
+  const token = process.env.ADMIN_TOKEN;
+  chai.request(app)
+          .patch('/api/v1/user/16')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(200);
@@ -21,72 +34,63 @@ it('should change user to mentor', (done) => {
         done();
       });
 
+ 
+
 it('should not change user to mentor', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
-        chai.request(app)
+        const token = process.env.ADMIN_TOKEN;
+
+          chai.request(app)
           .patch('/api/v1/user/2')
           .set('Authorization',token)
           .end((err, res) => {
-            expect(res).to.have.status(200);
+            expect(res).to.have.status(208);
           });
         done();
       });  
       
 it('should not change user to mentor', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJmaXJkdWtAZ21haWwuY20iLCJpc19hZG1pbiI6ZmFsc2UsImlzX21lbnRvciI6ZmFsc2UsImlhdCI6MTU2NzMzNjIyMH0.rfNduPgW97X8FYrI5RZJDFANrOOSrvEZ8o1kSxpjuQE" ;
-        chai.request(app)
+  const token = process.env.ADMIN_TOKEN;
+       chai.request(app)
           .patch('/api/v1/user/2')
           .set('Authorization',token)
           .end((err, res) => {
-            expect(res).to.have.status(403);
+            expect(res).to.have.status(208);
           });
         done();
-      });       
-});
+      }); 
+      
+it(' userId not found ', (done) => {
+        const token = process.env.ADMIN_TOKEN;
 
-describe('test to delete user', () => {
-
-    it('should delete users review ', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
-        chai.request(app)
-        .delete('/api/v1/sessions/1/review')
-        .set('Authorization',token)
-        .end((err, res) => {
-          expect(res).to.have.status(200);
-        });
-      done();
-    });
-
-    it('should not delete users review ', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJmaXJkdWtAZ21haWwuY20iLCJpc19hZG1pbiI6ZmFsc2UsImlzX21lbnRvciI6ZmFsc2UsImlhdCI6MTU2NzMzNjIyMH0.rfNduPgW97X8FYrI5RZJDFANrOOSrvEZ8o1kSxpjuQE" ;
-        chai.request(app)
-        .delete('/api/v1/sessions/1/review')
-        .set('Authorization',token)
-        .end((err, res) => {
-          expect(res).to.have.status(403);
-        });
-      done();
-    });
-    it('should not delete users review ', (done) => {
-      const token ="JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJmaXJkdWtAZ21haWwuY20iLCJpc19hZG1pbiI6ZmFsc2UsImlzX21lbnRvciI6ZmFsc2UsImlhdCI6MTU2NzMzNjIyMH0.rfNduPgW97X8FYrI5RZJDFANrOOSrvEZ8o1kSxpjuQE" ;
-      chai.request(app)
-      .delete('/api/v1/sessions/1/review')
-      .set('Authorization',token)
-      .end((err, res) => {
-        expect(res).to.have.status(401);
+          chai.request(app)
+          .patch('/api/v1/user/548')
+          .set('Authorization',token)
+          .end((err, res) => {
+            expect(res).to.have.status(404);
+          });
+        done();
       });
-    done();
-  });
+      
+it(' userId must be an integer ', (done) => {
+        const token = process.env.ADMIN_TOKEN;
+           chai.request(app)
+          .patch('/api/v1/user/djdjdj')
+          .set('Authorization',token)
+          .end((err, res) => {
+            expect(res).to.have.status(400);
+          });
+        done();
+      });
 
-
-    it('Review not not found ', (done) => {
-        const token ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJmaXJhZHVrQGdtYWlsLmNvbSIsImlzX2FkbWluIjp0cnVlLCJpc19tZW50b3IiOmZhbHNlLCJpYXQiOjE1NjcyNTk1MTl9.oj8RebPJpU1yZCpi90sehGA0fErdJiTPGNw_8pCf4Gw" ;
-        chai.request(app)
-        .delete('/api/v1/sessions/50/review')
-        .set('Authorization',token)
-        .end((err, res) => {
-          expect(res).to.have.status(404);
-        });
-      done();
-    });
+      it('YOU must sign in ', (done) => {
+           chai.request(app)
+          .patch('/api/v1/user/16')
+          .end((err, res) => {
+            expect(res).to.have.status(401);
+          });
+        done();
+      });
+      
 });
+
+

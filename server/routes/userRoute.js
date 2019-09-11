@@ -10,8 +10,8 @@ import specificMentor from '../controllers/specificMentor';
 
 const route = express.Router();
 
-route.post('/api/v1/auth/signin',signinValidater,signin);
-route.post('/api/v1/auth/signup',signupValidater,signup);
+route.post('/api/v1/auth/signin',signinValidater,signin.signin);
+route.post('/api/v1/auth/signup',signupValidater,signup.signup);
 route.get('/api/v1/mentors',Authorisation,allMentors.MentorsDisplay);
 route.get('/api/v1/mentors/:mentorId',Authorisation, specificMentor.MentorDisplay);
 

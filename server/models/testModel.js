@@ -1,6 +1,21 @@
-const users=[
+
+const testInfo=[
     {
-        id: 1,
+        email: 'iuguyg@gmal.com',
+        password: '@@#@!'  
+    },
+
+    {
+        email: 'firaduk@gmail.com',
+        password: 'ibirayi123',
+    },
+    {
+        email: 'firaduk@yahoo.com',
+        password: 'ibirayi123',
+    },
+
+
+    {
         firstName: 'IRANZI',
         lastName: 'Fiacre',
         email: 'firaduk@gmail.com',
@@ -8,14 +23,20 @@ const users=[
         address: 'Kigali',
         bio: 'I am a software engineer',
         occupation: 'Software engineer',
-        expertise: 'javascript',
-        is_admin: true,
-        is_mentor: false,
-
+        expertise: 'javascript'
+      },
+      {
+        firstName: 'james',
+        lastName: 'bond',
+        email: 'jas@il.com',
+        password: 'jame1234',
+        address: 'Nyarugenge',
+        bio: 'uhfuiffihwiufhwfuwhfuufhwufhu',
+        occupation: 'Developer',
+        expertise: 'Javascript',
       },
 
       {
-        id: 2,
         firstName: 'Uwase',
         lastName: 'Chalto',
         email: 'chalto@gmail.com',
@@ -24,12 +45,9 @@ const users=[
         bio: 'I am a fashion designer',
         occupation: 'fashion',
         expertise: 'dresses',
-        is_admin: false,
-        is_mentor: false,
       },
 
       {
-        id: 3,
         firstName: 'Micheal',
         lastName: 'Jordan',
         email: 'mento1@freementors.com',
@@ -38,12 +56,9 @@ const users=[
         bio: 'I am a professional basketball player',
         occupation: 'Business Marketing',
         expertise: 'basketball player',
-        is_admin: false,
-        is_mentor: true
       },
 
       {
-        id: 4,
         firstName: 'Opral ',
         lastName: 'winifrey',
         email: 'mento5@freementors.com',
@@ -52,11 +67,10 @@ const users=[
         bio: 'I am in the entertainment industry',
         occupation: 'Actress, Tv host,...',
         expertise: 'actress',
-        is_admin: false,
-        is_mentor: true
       }
+
+
 
 ];
 
-
-module.exports = users;
+export default testInfo;
