@@ -6,8 +6,8 @@
       "description": "Free Mentors is a social initiative where accomplished professionals become role models to young people to provide free mentorship session.",
       "contact": {}
     },
-    "host": "https://free-mentor-s.herokuapp.com",
-    "basePath": "/api/v1",
+    "host": "free-mentor-s.herokuapp.com",
+    "basePath": "/api/v2",
     "securityDefinitions": {},
     "schemes": [
       "http",
@@ -424,146 +424,7 @@
           }
         }
       },
-
-    "/sessions": {
-        "get": {
-          "description": "A mentor or user can view requested  mentorship sessions ",
-          "summary": "Get all mentor and user's mentorship sessions",
-          "tags": [
-            "session"
-          ],
-          "operationId": "mentorSessions",
-          "deprecated": false,
-          "produces": [
-            "application/json"
-          ],
-          "consumes": [
-            "application/x-www-form-urlencoded"
-          ],
-          "parameters": [
-            {
-              "name": "Authorization",
-              "in": "header",
-              "required": true,
-              "type": "string"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "user sessions will be displayed"
-            },
-            "400": {
-              "description": "Bad requests"
-            },
-            "401": {
-              "description": "Unauthorised: You must signin to proceed"
-            }
-          }
-        }
-      },
-
-      "/sessions/{sessionId}/review/": {
-        "post": {
-          "description": "A mentee can  review a mentor on a mentorship session",
-          "summary": "Review a mentor",
-          "tags": [
-            "Session review"
-          ],
-          "operationId": "reviewSession",
-          "deprecated": false,
-          "produces": [
-            "application/json"
-          ],
-          "consumes": [
-            "application/x-www-form-urlencoded"
-          ],
-          "parameters": [
-            {
-              "name": "Authorization",
-              "in": "header",
-              "required":true,
-              "type": "string"
-            },
-            {
-                "name": "sessionId",
-                "in": "path",
-                "required": true,
-                "type": "integer",
-                "format": "int32"
-            },
-            {
-                "name": "score",
-                "in": "formData",
-                "required": true,
-                "type": "integer",
-                "format": "int32"
-            },
-            {
-                "name": "remark",
-                "in": "formData",
-                "required":true,
-                "type": "string"
-              }
-          ],
-          "responses": {
-            "200": {
-              "description": "Reviewed the mentor"
-            },
-            "400": {
-              "description": "Mentor Already Reviewed"
-            },
-            "401": {
-              "description": "Paramenter not found"
-            }
-          }
-        }
-      },
-      
-      "/sessions/{sessionId}/review": {
-        "delete": {
-          "description": "An admin may delete an inappropriate mentorship session review deemed inappropriate.",
-          "summary": "Delete an inappropriate review",
-          "tags": [
-            "Session review"
-          ],
-          "operationId": "hdhdj",
-          "deprecated": false,
-          "produces": [
-            "application/json"
-          ],
-          "consumes": [
-            "application/x-www-form-urlencoded"
-          ],
-          "parameters": [
-            {
-              "name": "Authorization",
-              "in": "header",
-              "required": true,
-              "type": "string"
-            },
-            {
-                "name": "sessionId",
-                "in": "path",
-                "required": true,
-                "type": "integer",
-                "format": "int32"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "Review successfully deleted"
-            },
-            "400": {
-              "description": " Review alread deleted"
-            },
-            "401": {
-              "description": "You must sign in to continue"
-            }
-          }
-        }
-      }
-    },
-
+  
     "definitions": {
         "signin": {
             "type": "object",
@@ -637,6 +498,4 @@
       }
     ]
   }
-
-
-  
+}
