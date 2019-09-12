@@ -77,7 +77,7 @@ class Signing {
       const insert = 'INSERT INTO users(firstname, lastname, email, password, address, bio, occupation, expertise) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
       const { rows } = await pool.query(insert,
         [newUser.firstName, newUser.lastName, newUser.email, newUser.password, newUser.address, newUser.bio, newUser.occupation, newUser.expertise]);
-
+          
       const user = rows.find((obj) => obj.id);
       const token = jwt.sign({
         id: user.id,

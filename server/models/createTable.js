@@ -1,4 +1,3 @@
-
 import pool from '../configurations/db-config';
 
 const createTables = `

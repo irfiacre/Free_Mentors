@@ -31,9 +31,9 @@ class sessions {
         menteeEmail : req.userData.email,
         status : 'pending'
     }
- const insert = 'INSERT INTO sessions( session_id, mentorid, menteeid, questions,menteeemail,status) VALUES($1, $2, $3, $4, $5, $6) RETURNING *';
+ const insert = 'INSERT INTO sessions(mentorid, menteeid, questions,menteeemail,status) VALUES($1, $2, $3, $4, $5) RETURNING *';
     const { rows } = await pool.query(insert,
-      [newSession.sessionId, newSession.mentorId, newSession.menteeId, newSession.questions, newSession.menteeEmail, newSession.status]);
+      [newSession.mentorId, newSession.menteeId, newSession.questions, newSession.menteeEmail, newSession.status]);
           
     res.status(200).json({
         status:200,
