@@ -15,7 +15,7 @@ describe('test for incorrect URL', () => {
     const token = process.env.USER_TOKEN;
 
     chai.request(app)
-      .get('/api/v1/ment')
+      .get('/api/v2/ment')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(400);
@@ -26,7 +26,7 @@ describe('test for incorrect URL', () => {
 
 before('should return email already exist', (done) => {
   chai.request(app)
-    .post('/api/v1/auth/signup')
+    .post('/api/v2/auth/signup')
     .send(testInfo[3])
     .end((err, res) => {
       expect(res).to.have.status(422);
@@ -37,7 +37,7 @@ before('should return email already exist', (done) => {
 describe('test the user sign up', () => {
   it('should sign up new user', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(testInfo[5])
       .end((err, res) => {
         expect(res).to.have.status(201);
@@ -47,7 +47,7 @@ describe('test the user sign up', () => {
 
   it('should validate the user', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(testInfo[4])
       .end((err, res) => {
         expect(res).to.have.status(422);
@@ -57,7 +57,7 @@ describe('test the user sign up', () => {
 
   it('should not sign-up user, email arleady found', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(testInfo[4])
       .end((err, res) => {
         expect(res).to.have.status(422);
@@ -67,7 +67,7 @@ describe('test the user sign up', () => {
 
   it('should not sign-up user, missing credentials', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signup')
+      .post('/api/v2/auth/signup')
       .send(testInfo[6])
       .end((err, res) => {
         expect(res).to.have.status(422);
@@ -77,7 +77,7 @@ describe('test the user sign up', () => {
 });
 it('userCreated', (done) => {
   chai.request(app)
-    .post('/api/v1/auth/signup')
+    .post('/api/v2/auth/signup')
     .send(testInfo[9])
     .end((err, res) => {
       expect(res.statusCode).to.equal(422);
@@ -89,7 +89,7 @@ it('userCreated', (done) => {
 describe('test the user sign in', () => {
   it('should sign in user', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(testInfo[3])
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -99,7 +99,7 @@ describe('test the user sign in', () => {
 
   it('should validate the user', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(testInfo[0])
       .end((err, res) => {
         expect(res).to.have.status(422);
@@ -109,7 +109,7 @@ describe('test the user sign in', () => {
 
   it('email not found and pasword must not contain alphanum', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(testInfo[2])
       .end((err, res) => {
         expect(res.statusCode).to.equal(422);
@@ -121,7 +121,7 @@ describe('test the user sign in', () => {
 
   it('password not found', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(testInfo[2])
       .end((err, res) => {
         expect(res.statusCode).to.equal(422);
@@ -131,7 +131,7 @@ describe('test the user sign in', () => {
   });
   it('invalid credentials', (done) => {
     chai.request(app)
-      .post('/api/v1/auth/signin')
+      .post('/api/v2/auth/signin')
       .send(testInfo[0])
       .end((err, res) => {
         expect(res).to.have.status(422);
@@ -142,7 +142,7 @@ describe('test the user sign in', () => {
 describe('test the view mentors', () => {
   it('YOU must sign in ', (done) => {
     chai.request(app)
-      .get('/api/v1/mentors')
+      .get('/api/v2/mentors')
       .end((err, res) => {
         expect(res).to.have.status(401);
       });
@@ -152,7 +152,7 @@ describe('test the view mentors', () => {
   it('should show all mentors available to the user', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors')
+      .get('/api/v2/mentors')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -163,7 +163,7 @@ describe('test the view mentors', () => {
   it('should allow user to view specific mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/11')
+      .get('/api/v2/mentors/11')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -173,7 +173,7 @@ describe('test the view mentors', () => {
   it('should not allow user to view specific mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/390')
+      .get('/api/v2/mentors/390')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -185,7 +185,7 @@ describe('test the view mentors', () => {
   it('This is not a mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/12')
+      .get('/api/v2/mentors/12')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -197,7 +197,7 @@ describe('test the view mentors', () => {
 describe('session create', () => {
   it('YOU must sign in ', (done) => {
     chai.request(app)
-      .patch('/api/v1/sessions')
+      .patch('/api/v2/sessions')
       .end((err, res) => {
         expect(res).to.have.status(400);
         
@@ -207,7 +207,7 @@ describe('session create', () => {
     it('session created', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[11])
         .end((err, res) => {
@@ -220,7 +220,7 @@ describe('session create', () => {
     it('session already created', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[11])
         .end((err, res) => {
@@ -233,7 +233,7 @@ describe('session create', () => {
     it('mentorId should be an integer', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[12])
         .end((err, res) => {
@@ -245,7 +245,7 @@ describe('session create', () => {
     it('mentor not found', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[13])
         .end((err, res) => {
@@ -257,7 +257,7 @@ describe('session create', () => {
     it('parameter is invalid', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[13])
         .end((err, res) => {
@@ -268,7 +268,7 @@ describe('session create', () => {
     it('parameters is invalid', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[14])
         .end((err, res) => {
@@ -279,7 +279,7 @@ describe('session create', () => {
     it('mentorId is invalid', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[15])
         .end((err, res) => {
@@ -290,7 +290,7 @@ describe('session create', () => {
     it('questions is invalid', (done) => {
       const token = process.env.USER_TOKEN;
       chai.request(app)
-        .patch('/api/v1/sessions')
+        .patch('/api/v2/sessions')
         .set('Authorization', token)
         .send(testInfo[16])
         .end((err, res) => {
