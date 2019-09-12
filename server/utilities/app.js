@@ -15,10 +15,10 @@ app.use('/', admin);
 app.use('/', mentor);
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
-// app.use((req, res) => res.status(400).json({
-//   status: 400,
-//   error: 'PAGE NOT FOUND',
+app.use((req, res) => res.status(400).json({
+  status: 400,
+  error: 'PAGE NOT FOUND',
 
-// }));
+}));
 
 module.exports = app;
