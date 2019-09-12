@@ -5,14 +5,12 @@
   "main": "server.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-    "start": "babel-node server.js",
+    "start": "cross-env NODE_ENV=production babel-node server.js",
     "dev": " nodemon --exec babel-node server.js",
     "create-test": "cross-env NODE_ENV=testing babel-node ./server/models/testTable.js",
-    "test": "cross-env NODE_ENV=testing  npm run create-tables && nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 1000 server/tests/ --exit",
+    "test": "cross-env NODE_ENV=testing  npm run create-test && nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 1000 server/tests/ --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "drop": " babel-node  ./server/models/droptable.js",
-    "drop-tests": "cross-env NODE_ENV=testing babel-node  ./server/models/droptable.js",
-    "create-tables": " babel-node ./server/models/createTable.js"
+    "create-tables": "cross-env NODE_ENV=development babel-node ./server/models/createTable.js"
   },
   "repository": {
     "type": "git",
