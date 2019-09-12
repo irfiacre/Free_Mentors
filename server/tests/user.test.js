@@ -33,7 +33,7 @@ before('should return email already exist', (done) => {
     .post('/api/v1/auth/signup')
     .send(testInfo[3])
     .end((err, res) => {
-      expect(res).to.have.status(400);
+      expect(res).to.have.status(422);
     });
   done();
 });
@@ -55,13 +55,37 @@ describe('test the user sign up', () => {
       .post('/api/v1/auth/signup')
       .send(testInfo[4])
       .end((err, res) => {
-        expect(res).to.have.status(400);
+        expect(res).to.have.status(422);
       });
     done();
   });
+
+it('should not sign-up user, email arleady found', (done) => {
+    
+  chai.request(app)
+    .post('/api/v1/auth/signup')
+    .send(testInfo[4])
+    .end((err, res) => {
+      expect(res).to.have.status(422);
+    });
+  done();
+});
+
+it('should not sign-up user, missing credentials', (done) => {
+
+  chai.request(app)
+    .post('/api/v1/auth/signup')
+    .send(testInfo[6])
+    .end((err, res) => {
+      expect(res).to.have.status(422);
+    });
+  done();
+});
+
 });
 
 describe('test the user sign in', () => {
+
 it('should sign in user', (done) => {
         chai.request(app)
       .post('/api/v1/auth/signin')
@@ -82,7 +106,7 @@ it('should validate the user', (done) => {
     done();
   });
 
-  it('email not found', (done) => {
+  it('email not found and pasword must not contain alphanum', (done) => {
    
   chai.request(app)
     .post('/api/v1/auth/signin')
@@ -105,7 +129,15 @@ it('should validate the user', (done) => {
     });
   done();
   });
-
+  it('invalid credentials', (done) => {
+    chai.request(app)
+  .post('/api/v1/auth/signin')
+  .send(testInfo[0])
+  .end((err, res) => {
+    expect(res).to.have.status(400);
+  });
+done();
+});
       
 });
 describe('test the view mentors', () => {
@@ -113,8 +145,8 @@ describe('test the view mentors', () => {
   it('YOU must sign in ', (done) => {
     
     chai.request(app)
-   .patch('/api/v1/auth/signin')
-   .end((err, res) => {
+    .get('/api/v1/mentors')
+    .end((err, res) => {
      expect(res).to.have.status(401);
    });
  done();
@@ -133,9 +165,10 @@ describe('test the view mentors', () => {
   });
 
 it('should allow user to view specific mentor',(done)=>{
+
   const token =process.env.USER_TOKEN;
   chai.request(app)
-    .get('/api/v1/mentors/3')
+    .get('/api/v1/mentors/1')
     .set('Authorization',token)
     .end((err,res)=> {
 

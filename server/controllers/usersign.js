@@ -54,8 +54,8 @@ class signing {
       const { rows: [emailFound] } = await pool.query(emailData, [req.body.email]);
 
       if (emailFound) {
-        return res.status(409).json({
-          status: 409,
+        return res.status(422).json({
+          status: 422,
           error: 'Email already exist',
         });
       }

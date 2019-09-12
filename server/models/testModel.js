@@ -11,11 +11,11 @@ const testInfo=[
     },
     {
         email: 'firaduk@yahoo.com',
-        password: 'ibirayi123'
+        password: 'ibiray#$%123'
     },
     {
       email: 'firaduk@gmail.com',
-      password: '$2b$10$SYav8yti5OPieBZ.2bp7Ou/clh.0Y89jEfpmS6vx.VE3bikzRrEJW',
+      password: 'ibirayi123',
     },
     {
         firstName: 'IRANZI',
@@ -39,13 +39,13 @@ const testInfo=[
       },
 
       {
-        firstName: 'Uwase',
-        lastName: 'Chalto',
+        firstName: '',
+        lastName: '',
         email: 'chalto@gmail.com',
         password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
         address: 'Kabeza',
         bio: 'I am a fashion designer',
-        occupation: 'fashion',
+        occupation: '',
         expertise: 'dresses',
       },
 
