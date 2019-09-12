@@ -1,10 +1,11 @@
+
 import bcrypt from 'bcrypt';
 import '@babel/plugin-transform-regenerator';
 import '@babel/polyfill';
 import jwt from 'jsonwebtoken';
 import pool from '../configurations/db-config';
 
-class signing {
+class Signing {
   async signin(req, res) {
     try {
       const emailGet = 'SELECT email FROM users WHERE email = $1;';
@@ -76,7 +77,7 @@ class signing {
       const insert = 'INSERT INTO users(firstname, lastname, email, password, address, bio, occupation, expertise) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
       const { rows } = await pool.query(insert,
         [newUser.firstName, newUser.lastName, newUser.email, newUser.password, newUser.address, newUser.bio, newUser.occupation, newUser.expertise]);
-
+          
       const user = rows.find((obj) => obj.id);
       const token = jwt.sign({
         id: user.id,
@@ -105,4 +106,4 @@ class signing {
     }
   }
 }
-export default new signing();
+export default new Signing();

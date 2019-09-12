@@ -105,7 +105,7 @@ class mentors {
       if (checking.is_mentor === true) {
         return res.status(208).json({
           status: 208,
-          error: 'User is already mentor',
+          error: ` ${checking.firstname} is already mentor `,
         });
       }
       const newInfo = `UPDATE users SET is_mentor=true WHERE id = ${req.params.userId} `;
@@ -113,8 +113,9 @@ class mentors {
 
       res.status(200).json({
         status: 200,
-        message: ` ${checking.id} status changed to true`,
+        message: ` ${checking.firstname} status changed to a mentor`,
       });
+      
     } catch (error) {
       return res.status(500).json({
         status: 500,

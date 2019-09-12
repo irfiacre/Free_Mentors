@@ -1,20 +1,20 @@
- const Joi = require('joi');
- 
- const signinValidator = (req,res,next)=>{
-     const schema = {
+const Joi = require('joi');
 
-        password: Joi.string().alphanum().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
-        email: Joi.string().email({ minDomainSegments: 2 }).required()
+const signinValidator = (req, res, next) => {
+  const schema = {
 
-     }
-     const {error} = Joi.validate(req.body,schema);
-     if(error){
-         return res.status(422).json({
-             status:422,
-             error: error.details[0].message
-         });
-     }
-     next();
- }
+    password: Joi.string().alphanum().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
+    email: Joi.string().email({ minDomainSegments: 2 }).required(),
 
- module.exports = signinValidator;
+  };
+  const { error } = Joi.validate(req.body, schema);
+  if (error) {
+    return res.status(422).json({
+      status: 422,
+      error: error.details[0].message,
+    });
+  }
+  next();
+};
+
+module.exports = signinValidator;
