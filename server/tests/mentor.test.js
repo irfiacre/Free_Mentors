@@ -11,7 +11,7 @@ describe('test to accept or reject session request', () => {
   it(' Not a mentor', (done) => {
     const token= process.env.USER_TOKEN;
     chai.request(app)
-     .patch('/api/v1/sessions/11/accept')
+     .patch('/api/v2/sessions/11/accept')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(403);
@@ -22,7 +22,7 @@ describe('test to accept or reject session request', () => {
   it('session not found', (done) => {
     const token = process.env.MENTOR_TOKEN;
     chai.request(app)
-      .patch('/api/v1/sessions/50/accept')
+      .patch('/api/v2/sessions/50/accept')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -35,7 +35,7 @@ describe('test to accept or reject session request', () => {
     
     chai.request(app)
 
-      .patch('/api/v1/sessions/11/accept')
+      .patch('/api/v2/sessions/11/accept')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -46,7 +46,7 @@ describe('test to accept or reject session request', () => {
   it('already accepted', (done) => {
     const token = process.env.MENTOR_TOKEN;
     chai.request(app)
-      .patch('/api/v1/sessions/12/accept')
+      .patch('/api/v2/sessions/12/accept')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -59,7 +59,7 @@ describe('test to accept or reject session request', () => {
     const token = process.env.MENTOR_TOKEN;
 
     chai.request(app)
-      .patch('/api/v1/sessions/50/accept')
+      .patch('/api/v2/sessions/50/accept')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -71,7 +71,7 @@ describe('test to accept or reject session request', () => {
     const token = process.env.MENTOR_TOKEN;
 
     chai.request(app)
-      .patch('/api/v1/sessions/13/reject')
+      .patch('/api/v2/sessions/13/reject')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -83,7 +83,7 @@ describe('test to accept or reject session request', () => {
 
     chai.request(app)
 
-      .patch('/api/v1/sessions/14/reject')
+      .patch('/api/v2/sessions/14/reject')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
@@ -95,7 +95,7 @@ describe('test to accept or reject session request', () => {
     const token = process.env.MENTOR_TOKEN;
 
     chai.request(app)
-      .patch('/api/v1/sessions/14/reject')
+      .patch('/api/v2/sessions/14/reject')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);

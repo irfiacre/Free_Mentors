@@ -6,6 +6,6 @@ import adminCheck  from '../middleware/adminCheck';
 
 const route = express.Router();
 
-route.patch('/api/v1/user/:userId',[Authentication, adminCheck],allMentors.changeUserToMentor);
+route.patch('/api/v2/user/:userId',[Authentication, adminCheck],allMentors.changeUserToMentor);
 
 module.exports = route;
