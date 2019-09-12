@@ -16,15 +16,18 @@ const createTables = `
       is_admin BOOLEAN NOT NULL DEFAULT FALSE
     );
 
-
     CREATE TABLE IF NOT EXISTS sessions(
       session_id SERIAL PRIMARY KEY,
-      mentorId INT references users(id) ON DELETE CASCADE,
-      menteeId INT references users(id) ON DELETE CASCADE,
+      mentorId INT ,
+      menteeId INT ,
       questions VARCHAR(256) NOT NULL,
       menteeEmail VARCHAR(30) UNIQUE NOT NULL,
       status VARCHAR(10) NOT NULL
     );
+    INSERT INTO users(
+      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+      )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','Rwanda','I love developing','programming and playing','software developer', 'true','true');
+    
     `;
 
 
