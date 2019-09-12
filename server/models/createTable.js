@@ -17,15 +17,14 @@ const createTables = `
       is_admin BOOLEAN NOT NULL DEFAULT FALSE
     );
 
-   
-    
+
     CREATE TABLE IF NOT EXISTS sessions(
-        session_id SERIAL PRIMARY KEY,
-        mentorId INT references users(userId) ON DELETE CASCADE,
-        menteeId INT references users(userId) ON DELETE CASCADE,
-        questions VARCHAR(256) NOT NULL,
-        menteeEmail VARCHAR(30) UNIQUE NOT NULL,
-        status VARCHAR(10) NOT NULL
+      session_id SERIAL PRIMARY KEY,
+      mentorId INT references users(id) ON DELETE CASCADE,
+      menteeId INT references users(id) ON DELETE CASCADE,
+      questions VARCHAR(256) NOT NULL,
+      menteeEmail VARCHAR(30) UNIQUE NOT NULL,
+      status VARCHAR(10) NOT NULL
     );
 
     INSERT INTO users(
@@ -53,5 +52,3 @@ const tableCreate = async () => {
 };
 
 tableCreate();
-
-// export {pool}
