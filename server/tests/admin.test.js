@@ -46,10 +46,10 @@ it('should not change user to mentor', (done) => {
         done();
       });  
       
-it('should not change user to mentor, Not in an admin ', (done) => {
+it('should not change user to mentor, Not an admin ', (done) => {
   const token = process.env.USER_TOKEN;
        chai.request(app)
-          .patch('/api/v1/user/2')
+          .patch('/api/v1/user/3')
           .set('Authorization',token)
           .end((err, res) => {
             expect(res).to.have.status(403);

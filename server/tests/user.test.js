@@ -101,7 +101,7 @@ it('should validate the user', (done) => {
       .post('/api/v1/auth/signin')
       .send(testInfo[0])
       .end((err, res) => {
-        expect(res).to.have.status(400);
+        expect(res).to.have.status(422);
       });
     done();
   });

@@ -50,7 +50,7 @@ class mentors {
       if (!Check) {
         return res.status(404).json({
           status: 404,
-          error: 'Mentor not found'
+          error: 'Mentor not found',
         });
       }
       if (Check.is_mentor) {
@@ -66,16 +66,16 @@ class mentors {
 
         return res.status(200).json({
           status: 200,
-          message:"specified mentor",
-          data: mentorData
-          
+          message: 'specified mentor',
+          data: mentorData,
+
         });
       }
       return res.status(400).json({
         status: 400,
         error: 'This is not a mentor',
       });
-    } catch(error) {
+    } catch (error) {
       return res.status(500).json({
         status: 500,
         error: error.message,
@@ -110,12 +110,12 @@ class mentors {
       }
       const newInfo = `UPDATE users SET is_mentor=true WHERE id = ${req.params.userId} `;
       const { row } = await pool.query(newInfo);
-      
+
       res.status(200).json({
         status: 200,
         message: ` ${checking.id} status changed to true`,
       });
-    } catch(error) {
+    } catch (error) {
       return res.status(500).json({
         status: 500,
         error: error.message,
