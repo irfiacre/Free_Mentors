@@ -23,7 +23,7 @@ describe('test the user to mentor', () => {
   it('should change user to mentor', (done) => {
     const token = process.env.ADMIN_TOKEN;
     chai.request(app)
-      .patch('/api/v1/user/2')
+      .patch('/api/v1/user/13')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -35,7 +35,7 @@ describe('test the user to mentor', () => {
     const token = process.env.ADMIN_TOKEN;
 
     chai.request(app)
-      .patch('/api/v1/user/1')
+      .patch('/api/v1/user/11')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(208);
@@ -46,7 +46,7 @@ describe('test the user to mentor', () => {
   it('should not change user to mentor, Not an admin ', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .patch('/api/v1/user/3')
+      .patch('/api/v1/user/13')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(403);
@@ -79,7 +79,7 @@ describe('test the user to mentor', () => {
 
   it('YOU must sign in ', (done) => {
     chai.request(app)
-      .patch('/api/v1/user/2')
+      .patch('/api/v1/user/12')
       .end((err, res) => {
         expect(res).to.have.status(401);
       });

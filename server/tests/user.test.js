@@ -163,7 +163,7 @@ describe('test the view mentors', () => {
   it('should allow user to view specific mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/1')
+      .get('/api/v1/mentors/11')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(200);
@@ -185,7 +185,7 @@ describe('test the view mentors', () => {
   it('This is not a mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/3')
+      .get('/api/v1/mentors/12')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(404);
