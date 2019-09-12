@@ -26,7 +26,9 @@ const createTables = `
       menteeEmail VARCHAR(30) NOT NULL,
       status VARCHAR(10) NOT NULL
     );
-
+    INSERT INTO sessions(
+      mentorId,menteeId,questions,menteeEmail,status
+     )VALUES('1','2','Why asserts?','firaduk@gmail.com','pending');
     INSERT INTO users(
       firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
     )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'true','true');

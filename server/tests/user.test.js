@@ -198,10 +198,8 @@ describe('session create', () => {
   it('YOU must sign in ', (done) => {
     chai.request(app)
       .patch('/api/v1/sessions')
-      .send(testInfo[12])
       .end((err, res) => {
-        console.log(res);
-        expect(res).to.have.status(401);
+        expect(res).to.have.status(400);
         
       });
     done();
