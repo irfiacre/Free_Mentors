@@ -31,9 +31,7 @@ it('should change user to mentor', (done) => {
           });
         done();
       });
-
- 
-
+      
 it('should not change user to mentor', (done) => {
         const token = process.env.ADMIN_TOKEN;
 

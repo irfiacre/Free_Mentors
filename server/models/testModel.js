@@ -69,6 +69,26 @@ const testInfo=[
         bio: 'I am in the entertainment industry',
         occupation: 'Actress, Tv host,...',
         expertise: 'actress',
+      },
+      {
+        firstName: 'Opral ',
+        lastName: 'winifrey',
+        email: 'mto5@freementors.com',
+        password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
+        address: 'Usa',
+        bio: 'I am in the entertainment industry',
+        occupation: 'Actress, Tv host,...',
+        expertise: 'actress',
+      },
+      {
+        firstName: 'Opral ',
+        lastName: 'winifrey',
+        email: 'meo5@freementors.com',
+        password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
+        address: 'Usa',
+        bio: 'I am in the entertainment industry',
+        occupation: 'Actress, Tv host,...',
+        expertise: 'actress',
       }
 
 
