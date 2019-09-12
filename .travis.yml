@@ -9,11 +9,11 @@ services:
   - postgresql  
 
 before_script:
-  - psql -c "create database free_mentors;" -U postgres
+  - psql -c "create database test_env ;" -U postgres
 script:
-  - npm run create-tables
+  - npm run create-test
   - npm test
   
 after_success:
-  - npm run create-tables
+  - npm run create-test
   - npm run coveralls
