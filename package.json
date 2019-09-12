@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
     "start": "cross-env NODE_ENV=production babel-node server.js",
     "dev": " nodemon --exec babel-node server.js",
     "create-test": "cross-env NODE_ENV=testing babel-node ./server/models/testTable.js",
