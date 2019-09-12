@@ -27,26 +27,28 @@ const createTables = `
       status VARCHAR(10) NOT NULL
     );
     INSERT INTO sessions(
-      mentorId,menteeId,questions,menteeEmail,status
-     )VALUES('1','2','Why asserts?','firaduk@gmail.com','pending');
+      session_id,mentorId,menteeId,questions,menteeEmail,status
+     )VALUES('11','1','2','Why asserts?','firaduk@gmail.com','pending');
     INSERT INTO sessions(
-      mentorId,menteeId,questions,menteeEmail,status
-     )VALUES('1','3','Why asserts?','firaduk@gmail.com','pending'); 
+      session_id,mentorId,menteeId,questions,menteeEmail,status
+     )VALUES('12','1','3','Why asserts?','firaduk@gmail.com','accepted'); 
     INSERT INTO sessions(
-      mentorId,menteeId,questions,menteeEmail,status
-     )VALUES('1','2','Why asserts?','firaduk@gmail.com','pending');
-    
+      session_id,mentorId,menteeId,questions,menteeEmail,status
+     )VALUES('13','2','2','Why asserts?','firaduk@gmail.com','pending');
+    INSERT INTO sessions(
+      session_id,mentorId,menteeId,questions,menteeEmail,status
+     )VALUES('14','2','2','Why serts?','firaduk@gmail.com','rejected');
     INSERT INTO users(
-      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
-    )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'true','true');
+      id,firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('11','IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'true','true');
   
     INSERT INTO users(
-      firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
-    )VALUES('RASTA','Never','fi@mail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
+      id,firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('12','RASTA','Never','fi@mail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
   
     INSERT INTO users(
-     firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
-    )VALUES('BOOGY','Green','raduk@gmil.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
+      id,firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
+    )VALUES('13','BOOGY','Green','raduk@gmil.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','kigali/rwanda','I love developing','programming and playing','software developer', 'false','false');
   
     `;
 
