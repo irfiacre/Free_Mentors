@@ -72,7 +72,6 @@ it('should not sign-up user, email arleady found', (done) => {
 });
 
 it('should not sign-up user, missing credentials', (done) => {
-
   chai.request(app)
     .post('/api/v1/auth/signup')
     .send(testInfo[6])
@@ -81,7 +80,17 @@ it('should not sign-up user, missing credentials', (done) => {
     });
   done();
 });
-
+});
+it('userCreated', (done) => {
+   
+  chai.request(app)
+    .post('/api/v1/auth/signup')
+    .send(testInfo[9])
+    .end((err, res) => {
+      expect(res.statusCode).to.equal(422);
+      expect(res).to.have.status(422);
+    });
+  done();
 });
 
 describe('test the user sign in', () => {
@@ -117,10 +126,12 @@ it('should validate the user', (done) => {
     });
   done();
   });
+ 
+  
 
   it('password not found', (done) => {
 
-  chai.request(app)
+    chai.request(app)
     .post('/api/v1/auth/signin')
     .send(testInfo[2])
     .end((err, res) => {
