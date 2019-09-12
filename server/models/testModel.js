@@ -73,7 +73,7 @@ const testInfo=[
       {
         firstName: 'Opral ',
         lastName: 'winifrey',
-        email: 'mto5@freementors.com',
+        email: 'mto5@fentors.com',
         password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
         address: 'Usa',
         bio: 'I am in the entertainment industry',
@@ -83,7 +83,7 @@ const testInfo=[
       {
         firstName: 'Opral ',
         lastName: 'winifrey',
-        email: 'meo5@freementors.com',
+        email: 'meo5@freentors.com',
         password: '$2b$10$48apLKyNsKjbvQ7frCp/keZZFujGpiWeBKB1ab2ddo1IZrey1LzSC',
         address: 'Usa',
         bio: 'I am in the entertainment industry',

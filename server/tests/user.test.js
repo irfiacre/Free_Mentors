@@ -203,7 +203,7 @@ it('should not allow user to view specific mentor',(done)=>{
 it('This is not a mentor',(done)=>{
   const token =process.env.USER_TOKEN;
   chai.request(app)
-    .get('/api/v1/mentors/1')                                                                    
+    .get('/api/v1/mentors/3')                                                                    
     .set('Authorization',token)
     .end((err,res)=> {
 
