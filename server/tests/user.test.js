@@ -119,7 +119,6 @@ describe('test the user sign in', () => {
   });
 
 
-
   it('password not found', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
@@ -186,10 +185,10 @@ describe('test the view mentors', () => {
   it('This is not a mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/2')
+      .get('/api/v1/mentors/3')
       .set('Authorization', token)
       .end((err, res) => {
-        expect(res).to.have.status(400);
+        expect(res).to.have.status(404);
       });
     done();
   });
@@ -199,9 +198,11 @@ describe('session create', () => {
   it('YOU must sign in ', (done) => {
     chai.request(app)
       .patch('/api/v1/sessions')
-      .send(testInfo[11])
+      .send(testInfo[12])
       .end((err, res) => {
+        console.log(res);
         expect(res).to.have.status(401);
+        
       });
     done();
 
@@ -213,6 +214,7 @@ describe('session create', () => {
         .send(testInfo[11])
         .end((err, res) => {
           expect(res).to.have.status(200);
+  
         });
       done();
     });
@@ -226,6 +228,7 @@ describe('session create', () => {
         .end((err, res) => {
           expect(res).to.have.status(208);
         });
+        
       done();
     });
 
@@ -237,6 +240,7 @@ describe('session create', () => {
         .send(testInfo[12])
         .end((err, res) => {
           expect(res).to.have.status(422);
+          
         });
       done();
     });
@@ -257,7 +261,40 @@ describe('session create', () => {
       chai.request(app)
         .patch('/api/v1/sessions')
         .set('Authorization', token)
+        .send(testInfo[13])
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+        });
+      done();
+    });
+    it('parameters is invalid', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
         .send(testInfo[14])
+        .end((err, res) => {
+          expect(res).to.have.status(422);
+        });
+      done();
+    });
+    it('mentorId is invalid', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[15])
+        .end((err, res) => {
+          expect(res).to.have.status(422);
+        });
+      done();
+    });
+    it('questions is invalid', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[16])
         .end((err, res) => {
           expect(res).to.have.status(422);
         });
