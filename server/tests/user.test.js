@@ -186,7 +186,7 @@ describe('test the view mentors', () => {
   it('This is not a mentor', (done) => {
     const token = process.env.USER_TOKEN;
     chai.request(app)
-      .get('/api/v1/mentors/3')
+      .get('/api/v1/mentors/2')
       .set('Authorization', token)
       .end((err, res) => {
         expect(res).to.have.status(400);
@@ -195,73 +195,73 @@ describe('test the view mentors', () => {
   });
 });
 
-// describe('session create', () => {
-//   it('YOU must sign in ', (done) => {
-//     chai.request(app)
-//       .patch('/api/v1/sessions')
-//       .send(testInfo[11])
-//       .end((err, res) => {
-//         expect(res).to.have.status(401);
-//       });
-//     done();
+describe('session create', () => {
+  it('YOU must sign in ', (done) => {
+    chai.request(app)
+      .patch('/api/v1/sessions')
+      .send(testInfo[11])
+      .end((err, res) => {
+        expect(res).to.have.status(401);
+      });
+    done();
 
-//     it('session created', (done) => {
-//       const token = process.env.USER_TOKEN;
-//       chai.request(app)
-//         .patch('/api/v1/sessions')
-//         .set('Authorization', token)
-//         .send(testInfo[11])
-//         .end((err, res) => {
-//           expect(res).to.have.status(200);
-//         });
-//       done();
-//     });
+    it('session created', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[11])
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+        });
+      done();
+    });
 
-//     it('session already created', (done) => {
-//       const token = process.env.USER_TOKEN;
-//       chai.request(app)
-//         .patch('/api/v1/sessions')
-//         .set('Authorization', token)
-//         .send(testInfo[11])
-//         .end((err, res) => {
-//           expect(res).to.have.status(208);
-//         });
-//       done();
-//     });
+    it('session already created', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[11])
+        .end((err, res) => {
+          expect(res).to.have.status(208);
+        });
+      done();
+    });
 
-//     it('mentorId should be an integer', (done) => {
-//       const token = process.env.USER_TOKEN;
-//       chai.request(app)
-//         .patch('/api/v1/sessions')
-//         .set('Authorization', token)
-//         .send(testInfo[12])
-//         .end((err, res) => {
-//           expect(res).to.have.status(422);
-//         });
-//       done();
-//     });
-//     it('mentor not found', (done) => {
-//       const token = process.env.USER_TOKEN;
-//       chai.request(app)
-//         .patch('/api/v1/sessions')
-//         .set('Authorization', token)
-//         .send(testInfo[13])
-//         .end((err, res) => {
-//           expect(res).to.have.status(404);
-//         });
-//       done();
-//     });
+    it('mentorId should be an integer', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[12])
+        .end((err, res) => {
+          expect(res).to.have.status(422);
+        });
+      done();
+    });
+    it('mentor not found', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[13])
+        .end((err, res) => {
+          expect(res).to.have.status(404);
+        });
+      done();
+    });
 
-//     it('parameter is invalid', (done) => {
-//       const token = process.env.USER_TOKEN;
-//       chai.request(app)
-//         .patch('/api/v1/sessions')
-//         .set('Authorization', token)
-//         .send(testInfo[14])
-//         .end((err, res) => {
-//           expect(res).to.have.status(422);
-//         });
-//       done();
-//     });
-//   });
-// });
+    it('parameter is invalid', (done) => {
+      const token = process.env.USER_TOKEN;
+      chai.request(app)
+        .patch('/api/v1/sessions')
+        .set('Authorization', token)
+        .send(testInfo[14])
+        .end((err, res) => {
+          expect(res).to.have.status(422);
+        });
+      done();
+    });
+  });
+});

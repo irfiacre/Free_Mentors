@@ -1,10 +1,11 @@
+
 import bcrypt from 'bcrypt';
 import '@babel/plugin-transform-regenerator';
 import '@babel/polyfill';
 import jwt from 'jsonwebtoken';
 import pool from '../configurations/db-config';
 
-class signing {
+class Signing {
   async signin(req, res) {
     try {
       const emailGet = 'SELECT email FROM users WHERE email = $1;';
@@ -105,4 +106,4 @@ class signing {
     }
   }
 }
-export default new signing();
+export default new Signing();

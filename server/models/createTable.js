@@ -1,5 +1,5 @@
 
-import pool from "../configurations/db-config"
+import pool from '../configurations/db-config';
 
 const createTables = `
     DROP TABLE IF EXISTS users CASCADE;
@@ -33,7 +33,7 @@ const tableCreate = async () => {
   await pool.query(createTables).then(() => {
     console.log('Tables created ');
     pool.end();
-  }).catch((err) => {
+  }).catch(() => {
     process.exit(0);
   });
 };
