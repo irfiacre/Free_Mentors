@@ -49,7 +49,7 @@ describe('test to accept or reject session request', () => {
       .patch('/api/v2/sessions/12/accept')
       .set('Authorization', token)
       .end((err, res) => {
-        expect(res).to.have.status(404);
+        expect(res).to.have.status(400);
       });
     done();
   });
@@ -86,7 +86,7 @@ describe('test to accept or reject session request', () => {
       .patch('/api/v2/sessions/14/reject')
       .set('Authorization', token)
       .end((err, res) => {
-        expect(res).to.have.status(404);
+        expect(res).to.have.status(400);
       });
     done();
   });
@@ -98,7 +98,7 @@ describe('test to accept or reject session request', () => {
       .patch('/api/v2/sessions/14/reject')
       .set('Authorization', token)
       .end((err, res) => {
-        expect(res).to.have.status(404);
+        expect(res).to.have.status(400);
       });
     done();
   });
