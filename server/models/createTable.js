@@ -1,7 +1,7 @@
 import pool from '../configurations/db-config';
 
 const createTables = `
-    DROP TABLE IF EXISTS users CASCADE;
+    DROP TABLE IF EXISTS users,sessions CASCADE;
     CREATE TABLE IF NOT EXISTS users(
       id SERIAL PRIMARY KEY,
       firstName VARCHAR(20) NOT NULL,
