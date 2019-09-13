@@ -22,3 +22,44 @@
 >
 > - Email: user@freementors.com
 > - Password: user@123
+
+#### THE ALL FREE_MENTORS ENDPOINTS ARE HOSTED ON [HEROKU](https://free-mentor-s.herokuapp.com/doc/#/)
+
+##### Installation
+
+> $ git clone https://github.com/irfiacre/Free_Mentors.git
+
+> $ cd Free_Mentors
+
+> $ npm install
+
+##### To run the app
+
+> $ npm run dev
+
+##### To run the test
+
+> $ npm test
+
+#### Tools and Technologies used
+> Built with
+
+> Nodejs
+
+> Expressjs
+
+##### Unit testing done with
+
+> Mocha and Chai
+
+> Postman
+
+##### Continuous integration and test coverage
+
+> Travis Ci for CI
+
+> Coveralls for test coverage
+
+##### Copyright 
+
+> IRADUKUNDA Allelua Fiacre, 2019
