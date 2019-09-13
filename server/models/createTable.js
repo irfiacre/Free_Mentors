@@ -21,7 +21,7 @@ const createTables = `
       mentorId INT ,
       menteeId INT ,
       questions VARCHAR(256) NOT NULL,
-      menteeEmail VARCHAR(30) UNIQUE NOT NULL,
+      menteeEmail VARCHAR(30) NOT NULL,
       status VARCHAR(10) NOT NULL
     );
     INSERT INTO users(
