@@ -9,9 +9,6 @@ window.addEventListener("scroll", ()=>
 
 })
 
-
-//POPUP Js
-
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("sign_in");
 
@@ -35,8 +32,6 @@ window.onclick = function(event) {
   }
 }
 
-
-//sign in
 
 const validateUser = (form) => {
 
