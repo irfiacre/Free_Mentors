@@ -26,7 +26,7 @@ const createTables = `
     );
     INSERT INTO users(
       firstName,lastName,email,password,address,bio,occupation,expertise,is_mentor,is_admin
-      )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','Rwanda','I love developing','programming and playing','software developer', 'true','true');
+      )VALUES('IRANZI','Fiacre','firaduk@gmail.com','$2b$10$c1wOrxcGDy.uYxedZn4qEOnq/O2R9rNQPDJnwkvNiEDWVK76yT4Yy','Rwanda/Kigali','I love developing','programming and playing','software developer', 'true','true');
     
     `;
 
